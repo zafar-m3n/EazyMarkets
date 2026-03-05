@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import React, { useRef } from "react";
-import Prism from "@/components/ui/Prism";
+import Galaxy from "@/components/ui/Galaxy";
 import MagicBento from "@/components/ui/MagicBento";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import Button from "@/components/ui/Button";
@@ -59,30 +59,28 @@ const Home = () => {
 
   return (
     <div ref={scrollContainerRef} className="min-h-screen bg-background text-text">
-      {/* =========================
-          HERO (full screen on desktop)
-      ========================== */}
+      {/* ========================= HERO ========================= */}
       <section className="relative overflow-hidden min-h-[72vh] lg:min-h-screen">
-        {/* Prism background (only inside hero) */}
-        <div className="absolute inset-0 pointer-events-none">
-          <Prism
-            animationType="rotate"
-            timeScale={0.5}
-            height={3.5}
-            baseWidth={5.5}
-            scale={3.6}
+        {/* Galaxy Background */}
+        <div className="absolute inset-0 pointer-events-none opacity-90">
+          <Galaxy
+            density={0.5}
+            rotationSpeed={0.1}
+            repulsionStrength={2}
+            autoCenterRepulsion={0}
+            starSpeed={0.6}
+            speed={1}
+            glowIntensity={0.45}
+            twinkleIntensity={0.15}
             hueShift={0}
-            colorFrequency={1}
-            noise={0}
-            glow={1}
-            colorStrength={0.55}
-            detailStrength={0.1}
+            saturation={0}
           />
-          {/* fade at bottom so it ends cleanly */}
+
+          {/* bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-background" />
         </div>
 
-        {/* Hero content */}
+        {/* Hero Content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14 lg:pb-0 lg:min-h-screen">
           <div className="mx-auto max-w-3xl text-center lg:flex lg:flex-col lg:justify-center lg:min-h-[calc(100vh-7rem)]">
             <p className="text-sm md:text-base text-text/70">
@@ -102,11 +100,11 @@ const Home = () => {
 
             {/* Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button variant="primary" icon="mdi:flash" iconPosition="left">
+              <Button variant="primary" icon="mdi:flash">
                 Open Account
               </Button>
 
-              <Button variant="secondary" icon="mdi:chart-line" iconPosition="left" onClick={scrollToFeatures}>
+              <Button variant="secondary" icon="mdi:chart-line" onClick={scrollToFeatures}>
                 Explore Features
               </Button>
             </div>
@@ -114,9 +112,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* =========================
-          TICKER
-      ========================== */}
+      {/* ========================= TICKER ========================= */}
       <section className="overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <ScrollVelocity
@@ -130,21 +126,19 @@ const Home = () => {
             scrollerClassName="text-text"
             scrollerStyle={{
               opacity: 0.9,
-              textShadow: "0 0 18px rgba(163,230,53,0.22)",
+              textShadow: "0 0 20px rgba(250,204,21,0.35)",
             }}
           />
         </div>
       </section>
 
-      {/* =========================
-          BENTO GRID
-      ========================== */}
+      {/* ========================= BENTO GRID ========================= */}
       <section id="features" className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <MagicBento
               cards={cards}
-              glowColor="163, 230, 53"
+              glowColor="250, 204, 21"
               enableSpotlight
               enableBorderGlow
               enableStars

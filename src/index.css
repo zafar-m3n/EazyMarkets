@@ -6,8 +6,9 @@
   --color-text: #f8fafc;
   --color-background: #07080b;
 
-  --color-accent-1: #a3e635;
-  --color-accent-2: #22c55e;
+  /* Yellow trading theme */
+  --color-accent-1: #ffff00; 
+  --color-accent-2: #eab308; 
 
   --color-card: #0f1217;
   --color-border: #1f2937;

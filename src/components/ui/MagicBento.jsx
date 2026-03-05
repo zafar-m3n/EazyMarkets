@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 
-const DEFAULT_GLOW_COLOR = "163, 230, 53"; // #a3e635
+const DEFAULT_GLOW_COLOR = "250, 204, 21"; // #facc15
 const MOBILE_BREAKPOINT = 768;
 
 const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
@@ -450,7 +450,7 @@ const MagicBento = ({
             --glow-color: ${glowColor};
 
             /* Match your theme */
-            --border-color: rgba(163, 230, 53, 0.18);
+            --border-color: rgba(250, 204, 21, 0.18);
             --background-dark: #07080b;
             --white: rgba(248, 250, 252, 1);
           }

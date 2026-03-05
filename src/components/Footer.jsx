@@ -10,7 +10,7 @@ function Footer() {
   const yearsActive = Math.floor(diffYears);
 
   return (
-    <footer className="w-full bg-background border-t border-accent-1/25 shadow-[0_-4px_24px_rgba(163,230,53,0.35)]">
+    <footer className="w-full bg-background border-t border-accent-1/20 shadow-[0_-6px_28px_rgba(250,204,21,0.22)]">
       <div className="max-w-7xl mx-auto px-6 md:px-0 mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
           {/* Brand */}
@@ -19,33 +19,38 @@ function Footer() {
               <span className="text-text">Eazy</span>
               <span className="bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Markets</span>
             </h3>
+
             <p className="text-sm md:text-base text-text/70 leading-relaxed mb-4">
               Premium forex and CFD brokerage with institutional-grade execution, competitive spreads, and modern
               trading technology.
             </p>
+
             <div className="flex items-center gap-3">
+              {/* Social icons */}
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_16px_rgba(59,130,246,0.35)] transition-transform duration-200 hover:scale-110"
+                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
               >
                 <Icon icon="mdi:twitter" className="w-5 h-5 text-accent-1" />
               </a>
+
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_16px_rgba(59,130,246,0.35)] transition-transform duration-200 hover:scale-110"
+                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
               >
                 <Icon icon="mdi:linkedin" className="w-5 h-5 text-accent-1" />
               </a>
+
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_16px_rgba(59,130,246,0.35)] transition-transform duration-200 hover:scale-110"
+                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
               >
                 <Icon icon="mdi:instagram" className="w-5 h-5 text-accent-1" />
               </a>
             </div>
           </div>
 
-          {/* Link sections: Trading / Company / Legal */}
+          {/* Links */}
           <div className="grid grid-cols-3 gap-8 lg:col-span-3">
             {/* Trading */}
             <div>
@@ -54,23 +59,20 @@ function Footer() {
                 <li>
                   <Link
                     to="/accounts"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
+                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
                   >
                     Account Types
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/bots"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
-                  >
+                  <Link to="/bots" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
                     Trading Bots
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/platforms"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
+                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
                   >
                     Platforms
                   </Link>
@@ -83,17 +85,14 @@ function Footer() {
               <h4 className="font-semibold text-text mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/about"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
-                  >
+                  <Link to="/about" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
                     About Us
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/education"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
+                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
                   >
                     Education
                   </Link>
@@ -101,7 +100,7 @@ function Footer() {
                 <li>
                   <Link
                     to="/contact"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
+                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
                   >
                     Contact
                   </Link>
@@ -114,26 +113,20 @@ function Footer() {
               <h4 className="font-semibold text-text mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/legal"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
-                  >
-                    Terms &amp; Conditions
+                  <Link to="/legal" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
+                    Terms & Conditions
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/privacy"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
+                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
                   >
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors duration-200"
-                  >
+                  <a href="#" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
                     Risk Disclosure
                   </a>
                 </li>
@@ -142,6 +135,7 @@ function Footer() {
           </div>
         </div>
 
+        {/* Risk text */}
         <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-text/70">
           <p>
             <span className="font-semibold">Risk Management &amp; Confidence in Every Trade with EazyMarkets.</span> At
@@ -180,7 +174,8 @@ function Footer() {
           </p>
         </div>
 
-        <div className="mt-6 border-t border-accent-1/20">
+        {/* Bottom bar */}
+        <div className="mt-6 border-t border-accent-1/15">
           <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm md:text-base text-text/60 text-center md:text-left">
               <span className="text-2xl font-semibold bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">
@@ -188,6 +183,7 @@ function Footer() {
               </span>
               years active
             </p>
+
             <p className="text-sm md:text-base text-text/60 text-center md:text-right">
               © {year} EazyMarkets. All Rights Reserved.
             </p>
