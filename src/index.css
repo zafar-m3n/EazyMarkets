@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --font-figtree: "Figtree", sans-serif;
+
+  --color-text: #f8fafc;
+  --color-background: #07080b;
+
+  --color-accent-1: #a3e635;
+  --color-accent-2: #22c55e;
+
+  --color-card: #0f1217;
+  --color-border: #1f2937;
+}
