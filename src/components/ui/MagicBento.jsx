@@ -1,11 +1,9 @@
-// src/components/ui/MagicBento.jsx
 import { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 
-// Your theme (acid lime) as RGB for rgba(...) usage
 const DEFAULT_GLOW_COLOR = "163, 230, 53"; // #a3e635
 const MOBILE_BREAKPOINT = 768;
 
