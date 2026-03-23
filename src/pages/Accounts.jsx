@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import accountsHero from "@/assets/accountsHero.jpg";
 
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
@@ -272,11 +273,7 @@ const Accounts = () => {
             >
               <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.28)]">
-                <img
-                  src="https://picsum.photos/900/700?random=21"
-                  alt="Trading account hero"
-                  className="w-full h-90 md:h-115 object-cover"
-                />
+                <img src={accountsHero} alt="Trading account hero" className="w-full h-90 md:h-115 object-cover" />
                 <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
 
                 <div className="absolute left-5 right-5 bottom-5 rounded-2xl border border-accent-1/10 bg-background/50 backdrop-blur-md p-4">
