@@ -125,11 +125,6 @@ function Footer() {
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
-                  <a href="#" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
-                    Risk Disclosure
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
