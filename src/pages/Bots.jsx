@@ -35,6 +35,7 @@ const bots = [
     riskManagement: "Stop loss",
     profitOptimization: "Basic AI signals",
     roi: "10% Weekly",
+    icon: "solar:cup-hot-bold",
   },
   {
     name: "SwiftAI 1000",
@@ -47,6 +48,7 @@ const bots = [
     riskManagement: "Trailing stop locked",
     profitOptimization: "Real-time market scans",
     roi: "7% Weekly",
+    icon: "solar:bolt-bold",
   },
   {
     name: "ProfitX 2000",
@@ -58,6 +60,7 @@ const bots = [
     riskManagement: "Risk matrix enabled",
     profitOptimization: "AI based entry/exit",
     roi: "10% Weekly",
+    icon: "solar:graph-up-bold",
   },
   {
     name: "AlphaBot 3000",
@@ -69,6 +72,7 @@ const bots = [
     riskManagement: "Auto hedging enabled",
     profitOptimization: "Deep learning analytics",
     roi: "12% Weekly",
+    icon: "solar:shield-check-bold",
   },
   {
     name: "QuantumAI 5000",
@@ -80,6 +84,7 @@ const bots = [
     riskManagement: "Adaptive risk controls",
     profitOptimization: "Predictive analytics",
     roi: "15% Weekly",
+    icon: "solar:stars-bold",
   },
   {
     name: "ZenithPro 7500",
@@ -98,6 +103,7 @@ const bots = [
     riskManagement: "Full portfolio automation",
     profitOptimization: "Self-learning algorithms",
     roi: "20% Weekly",
+    icon: "solar:medal-star-bold",
   },
   {
     name: "XclusiveAI",
@@ -117,6 +123,7 @@ const bots = [
     profitOptimization: "Self-learning algorithms",
     cashback: "25% Withdrawable",
     roi: "35% Weekly",
+    icon: "solar:crown-bold",
   },
   {
     name: "AtomX Ultra",
@@ -136,15 +143,16 @@ const bots = [
     profitOptimization: "Self-learning algorithms",
     cashback: "50% Withdrawable",
     roi: "45% Weekly",
+    icon: "solar:atom-bold",
   },
 ];
 
 const InfoBlock = ({ label, value, list = false }) => (
-  <div>
-    <p className="text-xs uppercase tracking-[0.18em] text-text/45">{label}</p>
+  <div className="rounded-2xl border border-accent-1/10 bg-background/35 p-4 backdrop-blur-sm">
+    <p className="text-[11px] uppercase tracking-[0.18em] text-text/45">{label}</p>
 
     {list ? (
-      <ul className="mt-3 space-y-1.5 text-sm text-text/75">
+      <ul className="mt-3 space-y-2 text-sm text-text/75">
         {value.map((item) => (
           <li key={item} className="flex items-start gap-2">
             <span className="mt-1 text-accent-2">
@@ -167,53 +175,64 @@ const BotCard = ({ bot }) => {
       whileInView="show"
       viewport={{ once: true, amount: 0.08 }}
       variants={fadeUp}
-      className="relative overflow-hidden rounded-[1.75rem] border border-accent-1/12 bg-card/85 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.22)]"
+      className="group relative overflow-hidden rounded-[1.9rem] border border-accent-1/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015))] p-6 md:p-7 shadow-[0_20px_70px_rgba(0,0,0,0.24)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-1/25 hover:shadow-[0_24px_90px_rgba(234,179,8,0.12)]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,0,0.08),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(234,179,8,0.07),transparent_20%)]" />
-      <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-accent-1/8 blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,0,0.10),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(234,179,8,0.08),transparent_28%)] opacity-80" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/60 to-transparent" />
+      <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-accent-1/8 blur-3xl" />
       <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-accent-2/8 blur-3xl" />
 
-      <div className="relative z-10 p-5 md:p-6">
-        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-          <div>
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-2xl font-semibold text-accent-2">{bot.name}</h3>
-              <span className="rounded-full border border-accent-1/15 bg-accent-1/8 px-3 py-1 text-xs font-medium text-text/85">
-                {bot.tag}
-              </span>
+      <div className="relative z-10">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex items-start gap-4">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-accent-1/20 bg-accent-1/10 text-accent-1 text-2xl shadow-[0_0_30px_rgba(255,255,0,0.08)]">
+              <Icon icon={bot.icon} />
+            </div>
+
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-xl md:text-[1.35rem] font-semibold leading-tight">{bot.name}</h3>
+                <span className="rounded-full border border-accent-1/15 bg-accent-1/8 px-3 py-1 text-xs font-medium tracking-[0.18em] text-accent-2/85">
+                  {bot.tag}
+                </span>
+              </div>
+
+              <p className="mt-2 text-sm text-text/65 leading-7 max-w-2xl">
+                Built for {bot.supportedMarkets.toLowerCase()} with a focus on {bot.profitOptimization.toLowerCase()}.
+              </p>
             </div>
           </div>
 
-          <div className="text-left md:text-right">
+          <div className="rounded-2xl border border-accent-1/15 bg-accent-1/8 px-4 py-3 lg:min-w-37.5 lg:text-right">
             {bot.oldPrice ? <p className="text-sm text-text/35 line-through">{bot.oldPrice}</p> : null}
             <p className="text-xl md:text-2xl font-semibold text-accent-2">{bot.price}</p>
           </div>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-6">
-          <div className="xl:col-span-1">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5">
+          <div className="space-y-4">
             <InfoBlock label="Supported Markets" value={bot.supportedMarkets} />
-            <div className="mt-5">
-              <InfoBlock label="Duration" value={bot.duration} />
-            </div>
+            <InfoBlock label="Duration" value={bot.duration} />
           </div>
 
           <div className="xl:col-span-2">
             <InfoBlock label="Specifications" value={bot.specifications} list />
           </div>
 
-          <div className="xl:col-span-1">
+          <div className="space-y-4">
             <InfoBlock label="Risk Management" value={bot.riskManagement} />
-          </div>
-
-          <div className="xl:col-span-1">
             <InfoBlock label="Profit Optimization" value={bot.profitOptimization} />
           </div>
 
-          <div className="xl:col-span-1 space-y-5">
+          <div className="space-y-4">
             {bot.cashback ? <InfoBlock label="Cashback" value={bot.cashback} /> : null}
             <InfoBlock label="ROI" value={bot.roi} />
           </div>
+        </div>
+
+        <div className="mt-6 flex items-center gap-2 text-accent-1/85 text-sm font-medium">
+          <span>Learn more</span>
+          <Icon icon="solar:arrow-right-up-bold" className="text-base" />
         </div>
       </div>
     </motion.div>
