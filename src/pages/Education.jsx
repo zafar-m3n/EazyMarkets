@@ -5,6 +5,10 @@ import CountUp from "react-countup";
 
 import Button from "@/components/ui/Button";
 import { LampContainer } from "@/components/ui/Lamp";
+import educationHero from "@/assets/educationHero.jpg";
+import education1 from "@/assets/education1.jpg";
+import education2 from "@/assets/education2.jpg";
+import education3 from "@/assets/education3.jpg";
 import homeCTA from "@/assets/homeCTA.jpg";
 
 const fadeUp = {
@@ -180,7 +184,7 @@ const Education = () => {
               <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.28)]">
                 <img
-                  src="https://picsum.photos/900/700?random=81"
+                  src={educationHero}
                   alt="AI trading education hero"
                   className="w-full h-90 sm:h-115 object-cover"
                 />
@@ -210,11 +214,7 @@ const Education = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
                   <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.28)]">
-                    <img
-                      src="https://picsum.photos/700/900?random=82"
-                      alt="AI trading edge"
-                      className="w-full h-85 sm:h-105 object-cover"
-                    />
+                    <img src={education1} alt="AI trading edge" className="w-full h-85 sm:h-105 object-cover" />
                     <div className="absolute inset-0 bg-linear-to-t from-background via-background/15 to-transparent" />
                   </div>
                 </div>
@@ -284,11 +284,7 @@ const Education = () => {
                 <div className="relative">
                   <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
                   <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.28)]">
-                    <img
-                      src="https://picsum.photos/900/900?random=83"
-                      alt="AI globe"
-                      className="w-full h-85 sm:h-107.5 object-cover"
-                    />
+                    <img src={education2} alt="AI globe" className="w-full h-85 sm:h-107.5 object-cover" />
                     <div className="absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent" />
                   </div>
                 </div>
@@ -411,11 +407,7 @@ const Education = () => {
 
                 <div className="mt-8">
                   <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 backdrop-blur-md shadow-[0_20px_70px_rgba(0,0,0,0.24)]">
-                    <img
-                      src="https://picsum.photos/900/700?random=84"
-                      alt="AI finance result visual"
-                      className="w-full h-70 sm:h-90 object-cover"
-                    />
+                    <img src={education3} alt="AI finance result visual" className="w-full h-70 sm:h-90 object-cover" />
                     <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
                   </div>
                 </div>
