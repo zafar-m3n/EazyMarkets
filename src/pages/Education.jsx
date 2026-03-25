@@ -75,18 +75,26 @@ const Education = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-figtree text-text">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-28 top-28 h-64 w-64 rounded-full bg-accent-1/8 blur-[120px]" />
-        <div className="absolute right-[8%] top-[18%] h-72 w-72 rounded-full bg-accent-2/8 blur-[140px]" />
-        <div className="absolute bottom-[8%] left-[18%] h-80 w-80 rounded-full bg-accent-1/6 blur-[150px]" />
+        <div className="absolute -left-28 top-28 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
+        <div className="absolute right-[8%] top-[18%] h-72 w-72 rounded-full bg-accent-2/10 blur-[140px]" />
+        <div className="absolute bottom-[8%] left-[18%] h-80 w-80 rounded-full bg-accent-1/8 blur-[150px]" />
       </div>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-16 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
-          <div className="absolute right-[10%] top-[10%] h-72 w-72 rounded-full bg-accent-2/10 blur-[140px]" />
-          <div className="absolute -bottom-10 left-[40%] h-48 w-48 rounded-full bg-accent-1/8 blur-[120px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.02),transparent_20%)]" />
+      <section className="relative overflow-hidden border-b border-border/70">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,#f8fbf4_0%,#eef9e7_50%,#f8fbf4_100%)]" />
+
+          <div className="absolute -left-20 top-12 h-[24rem] w-[24rem] rounded-full bg-accent-1/28 blur-[110px]" />
+          <div className="absolute right-[4%] top-[8%] h-[26rem] w-[26rem] rounded-full bg-accent-2/24 blur-[120px]" />
+          <div className="absolute -bottom-10 left-[40%] h-[18rem] w-[18rem] rounded-full bg-accent-1/22 blur-[100px]" />
+
+          <div className="absolute left-[8%] top-[12%] h-32 w-32 rounded-full bg-accent-1/36 blur-[48px]" />
+          <div className="absolute right-[16%] top-[18%] h-36 w-36 rounded-full bg-accent-2/30 blur-[54px]" />
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,217,87,0.20),transparent_20%),radial-gradient(circle_at_80%_24%,rgba(79,143,47,0.18),transparent_22%),radial-gradient(circle_at_48%_78%,rgba(126,217,87,0.14),transparent_20%)]" />
+          <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(rgba(126,217,87,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(126,217,87,0.10)_1px,transparent_1px)] [background-size:72px_72px]" />
+          <div className="absolute inset-0 bg-white/18" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 pb-18 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-32">
@@ -108,7 +116,7 @@ const Education = () => {
                   threshold={0.15}
                   config={{ tension: 50, friction: 25 }}
                 >
-                  <div className="inline-flex items-center gap-2 rounded-full border border-accent-1/10 bg-card/70 px-4 py-2 text-xs text-text/70 backdrop-blur-md">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-border/90 bg-white/62 px-4 py-2 text-xs text-text/70 backdrop-blur-md shadow-[0_8px_24px_rgba(31,41,55,0.05)]">
                     <span>Home</span>
                     <Icon icon="solar:alt-arrow-right-bold" className="text-text/35" />
                     <span className="text-accent-2">Education</span>
@@ -188,15 +196,15 @@ const Education = () => {
                   config={{ tension: 50, friction: 25 }}
                 >
                   <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Focus</p>
                       <p className="mt-2 text-lg font-semibold">AI Strategy</p>
                     </div>
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Approach</p>
                       <p className="mt-2 text-lg font-semibold">Data-Driven</p>
                     </div>
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Outcome</p>
                       <p className="mt-2 text-lg font-semibold">Smarter Trading</p>
                     </div>
@@ -214,16 +222,16 @@ const Education = () => {
               config={{ tension: 50, friction: 25 }}
             >
               <div className="relative">
-                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
-                <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/16 to-accent-2/12 blur-2xl" />
+                <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                   <img
                     src={educationHero}
                     alt="AI trading education hero"
                     className="h-90 w-full object-cover sm:h-115"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/74 via-background/18 to-transparent" />
 
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-accent-1/10 bg-background/50 p-4 backdrop-blur-md">
+                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-border/90 bg-white/55 p-4 backdrop-blur-md shadow-[0_10px_28px_rgba(31,41,55,0.05)]">
                     <p className="text-xs uppercase tracking-[0.2em] text-accent-2">EazyMarkets Education</p>
                     <p className="mt-2 text-lg font-semibold text-text">
                       Understand the principles behind intelligent, automated market decisions
@@ -238,9 +246,9 @@ const Education = () => {
 
       <div id="education-content">
         {/* SECTION 1 */}
-        <section className="relative border-b border-border/60 py-18 md:py-20">
-          <div className="absolute left-[10%] top-[28%] h-40 w-40 rounded-full bg-accent-1/7 blur-[110px]" />
-          <div className="absolute bottom-[12%] right-[12%] h-48 w-48 rounded-full bg-accent-2/7 blur-[120px]" />
+        <section className="relative border-b border-border/70 py-18 md:py-20">
+          <div className="absolute left-[10%] top-[28%] h-40 w-40 rounded-full bg-accent-1/8 blur-[110px]" />
+          <div className="absolute bottom-[12%] right-[12%] h-48 w-48 rounded-full bg-accent-2/8 blur-[120px]" />
 
           <AnimatedContent
             direction="horizontal"
@@ -252,10 +260,10 @@ const Education = () => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]">
                 <div className="relative">
-                  <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
-                  <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+                  <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/16 to-accent-2/12 blur-2xl" />
+                  <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                     <img src={education1} alt="AI trading edge" className="h-85 w-full object-cover sm:h-105" />
-                    <div className="absolute inset-0 bg-linear-to-t from-background via-background/15 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-background/74 via-background/15 to-transparent" />
                   </div>
                 </div>
 
@@ -284,9 +292,9 @@ const Education = () => {
         </section>
 
         {/* SECTION 2 */}
-        <section className="relative border-b border-border/60 py-18 md:py-20">
-          <div className="absolute bottom-[18%] left-[8%] h-40 w-40 rounded-full bg-accent-1/7 blur-[110px]" />
-          <div className="absolute right-[8%] top-[18%] h-48 w-48 rounded-full bg-accent-2/7 blur-[120px]" />
+        <section className="relative border-b border-border/70 py-18 md:py-20">
+          <div className="absolute bottom-[18%] left-[8%] h-40 w-40 rounded-full bg-accent-1/8 blur-[110px]" />
+          <div className="absolute right-[8%] top-[18%] h-48 w-48 rounded-full bg-accent-2/8 blur-[120px]" />
 
           <AnimatedContent
             direction="horizontal"
@@ -316,7 +324,7 @@ const Education = () => {
                     ].map((item) => (
                       <div
                         key={item}
-                        className="flex items-start gap-3 rounded-2xl border border-accent-1/10 bg-card/60 px-4 py-4"
+                        className="flex items-start gap-3 rounded-2xl border border-border/90 bg-white/60 px-4 py-4 backdrop-blur-md shadow-[0_8px_22px_rgba(31,41,55,0.04)]"
                       >
                         <span className="mt-1 text-accent-2">
                           <Icon icon="mdi:chevron-right" />
@@ -328,10 +336,10 @@ const Education = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
-                  <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+                  <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/16 to-accent-2/12 blur-2xl" />
+                  <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                     <img src={education2} alt="AI globe" className="h-85 w-full object-cover sm:h-107.5" />
-                    <div className="absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-background/74 via-background/10 to-transparent" />
                   </div>
                 </div>
               </div>
@@ -340,8 +348,8 @@ const Education = () => {
         </section>
 
         {/* COMPARISON TABLE */}
-        <section className="relative border-b border-border/60 py-18 md:py-20">
-          <div className="absolute left-[16%] top-[22%] h-36 w-36 rounded-full bg-accent-1/6 blur-[100px]" />
+        <section className="relative border-b border-border/70 py-18 md:py-20">
+          <div className="absolute left-[16%] top-[22%] h-36 w-36 rounded-full bg-accent-1/8 blur-[100px]" />
 
           <AnimatedContent
             direction="horizontal"
@@ -353,11 +361,11 @@ const Education = () => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               {/* Desktop / Tablet */}
               <div className="hidden md:block">
-                <div className="overflow-hidden rounded-[1.75rem] border border-accent-1/15 bg-card/70 shadow-[0_18px_60px_rgba(0,0,0,0.22)] backdrop-blur-md">
+                <div className="overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                   <table className="w-full border-collapse">
                     <thead>
-                      <tr className="border-b border-accent-1/15 bg-[linear-gradient(90deg,rgba(255,255,0,0.08),rgba(234,179,8,0.05))]">
-                        <th className="px-5 py-4 text-left text-sm font-semibold text-accent-1">Feature</th>
+                      <tr className="border-b border-border/90 bg-[linear-gradient(90deg,rgba(126,217,87,0.10),rgba(79,143,47,0.06))]">
+                        <th className="px-5 py-4 text-left text-sm font-semibold text-accent-2">Feature</th>
                         <th className="px-5 py-4 text-left text-sm font-semibold text-accent-2">AI Trading System</th>
                         <th className="px-5 py-4 text-left text-sm font-semibold text-accent-2">Manual Trading</th>
                       </tr>
@@ -366,7 +374,7 @@ const Education = () => {
                       {comparisonRows.map((row, index) => (
                         <tr
                           key={row.feature}
-                          className={`${index !== comparisonRows.length - 1 ? "border-b border-accent-1/10" : ""}`}
+                          className={index !== comparisonRows.length - 1 ? "border-b border-border/80" : ""}
                         >
                           <td className="px-5 py-4 text-sm font-medium text-text">{row.feature}</td>
                           <td className="px-5 py-4 text-sm text-text/75">{row.ai}</td>
@@ -390,14 +398,14 @@ const Education = () => {
                     threshold={0.1}
                     config={{ tension: 50, friction: 25 }}
                   >
-                    <div className="overflow-hidden rounded-3xl border border-accent-1/15 bg-card/70 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-md">
-                      <div className="border-b border-accent-1/15 bg-[linear-gradient(90deg,rgba(255,255,0,0.08),rgba(234,179,8,0.05))] px-4 py-3">
-                        <p className="text-sm font-semibold text-accent-1">{row.feature}</p>
+                    <div className="overflow-hidden rounded-3xl border border-border/90 bg-white/60 shadow-[0_14px_36px_rgba(31,41,55,0.08)] backdrop-blur-md">
+                      <div className="border-b border-border/90 bg-[linear-gradient(90deg,rgba(126,217,87,0.10),rgba(79,143,47,0.06))] px-4 py-3">
+                        <p className="text-sm font-semibold text-accent-2">{row.feature}</p>
                       </div>
 
                       <table className="w-full border-collapse">
                         <tbody>
-                          <tr className="border-b border-accent-1/10">
+                          <tr className="border-b border-border/80">
                             <td className="w-[38%] px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent-2">
                               AI Trading
                             </td>
@@ -420,8 +428,8 @@ const Education = () => {
         </section>
 
         {/* RESULTS + LAMP */}
-        <section className="relative overflow-hidden border-b border-border/60 py-18 md:py-20">
-          <div className="absolute right-[8%] top-[18%] h-48 w-48 rounded-full bg-accent-2/7 blur-[120px]" />
+        <section className="relative overflow-hidden border-b border-border/70 py-18 md:py-20">
+          <div className="absolute right-[8%] top-[18%] h-48 w-48 rounded-full bg-accent-2/8 blur-[120px]" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <LampContainer>
@@ -468,13 +476,13 @@ const Education = () => {
                   </div>
 
                   <div className="mt-8">
-                    <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 shadow-[0_20px_70px_rgba(0,0,0,0.24)] backdrop-blur-md">
+                    <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                       <img
                         src={education3}
                         alt="AI finance result visual"
                         className="h-70 w-full object-cover sm:h-90"
                       />
-                      <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-background/74 via-background/20 to-transparent" />
                     </div>
                   </div>
                 </div>
@@ -490,7 +498,7 @@ const Education = () => {
                       threshold={0.1}
                       config={{ tension: 50, friction: 25 }}
                     >
-                      <div className="rounded-[1.75rem] border border-accent-1/10 bg-card/75 p-8 shadow-[0_20px_70px_rgba(0,0,0,0.22)] backdrop-blur-md">
+                      <div className="rounded-[1.75rem] border border-border/90 bg-white/68 p-8 shadow-[0_16px_42px_rgba(31,41,55,0.08)] backdrop-blur-md">
                         <p className={`text-5xl font-semibold md:text-6xl ${stat.color}`}>
                           <CountUp
                             end={stat.value}
@@ -513,8 +521,8 @@ const Education = () => {
 
       {/* CTA */}
       <section id="education-cta" className="relative py-18 md:py-20">
-        <div className="absolute left-[10%] top-[15%] h-48 w-48 rounded-full bg-accent-1/8 blur-[120px]" />
-        <div className="absolute bottom-[12%] right-[10%] h-56 w-56 rounded-full bg-accent-2/8 blur-[130px]" />
+        <div className="absolute left-[10%] top-[15%] h-48 w-48 rounded-full bg-accent-1/10 blur-[120px]" />
+        <div className="absolute bottom-[12%] right-[10%] h-56 w-56 rounded-full bg-accent-2/10 blur-[130px]" />
 
         <AnimatedContent
           direction="horizontal"
@@ -524,8 +532,9 @@ const Education = () => {
           config={{ tension: 50, friction: 25 }}
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-4xl border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.018))] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.28)] sm:p-10 lg:p-14">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,0,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(234,179,8,0.10),transparent_32%)]" />
+            <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/58 p-8 shadow-[0_16px_46px_rgba(31,41,55,0.08)] backdrop-blur-xl sm:p-10 lg:p-14">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.80),rgba(255,255,255,0.42))]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(126,217,87,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(79,143,47,0.12),transparent_32%)]" />
 
               <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
@@ -548,13 +557,13 @@ const Education = () => {
                   </div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-border/80 bg-background/60 shadow-[0_16px_60px_rgba(0,0,0,0.22)]">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/72 shadow-[0_12px_36px_rgba(31,41,55,0.08)]">
                   <img
                     src={homeCTA}
                     alt="Smart trading technology"
                     className="h-64 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-80"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/75 via-transparent to-transparent" />
                 </div>
               </div>
             </div>
