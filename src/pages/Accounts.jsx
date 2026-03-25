@@ -73,20 +73,22 @@ const accountPlans = [
 
 const AccountPlanCard = ({ account }) => {
   return (
-    <div className="relative flex min-h-135 w-full flex-col overflow-hidden rounded-2xl border border-accent-1/15 border-t-4 border-t-accent-1/80 bg-card/80 p-6 shadow-md backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/35 hover:shadow-[0_18px_50px_rgba(234,179,8,0.12)]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,0,0.08),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(234,179,8,0.08),transparent_24%)]" />
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-1/10 blur-3xl" />
-      <div className="absolute -left-8 bottom-0 h-24 w-24 rounded-full bg-accent-2/10 blur-3xl" />
+    <div className="group relative flex min-h-135 w-full flex-col overflow-hidden rounded-2xl border border-border/90 border-t-4 border-t-accent-1/80 bg-white/58 p-6 shadow-[0_12px_34px_rgba(31,41,55,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/40 hover:shadow-[0_16px_42px_rgba(126,217,87,0.14)]">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(126,217,87,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(79,143,47,0.12),transparent_24%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/70 to-transparent" />
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-1/16 blur-3xl" />
+      <div className="absolute -left-8 bottom-0 h-24 w-24 rounded-full bg-accent-2/14 blur-3xl" />
 
       <div className="relative z-10">
         <div className="mb-4 flex items-center space-x-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/20 bg-accent-1/10 text-accent-1">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/25 bg-white/72 text-accent-2 shadow-[0_0_0_1px_rgba(126,217,87,0.08),0_0_22px_rgba(126,217,87,0.18)]">
             <Icon icon={account.icon} width={26} />
           </div>
 
           <div>
             <h3 className="text-2xl font-bold text-text">{account.title}</h3>
-            <span className="mt-1 inline-block rounded-full bg-accent-1 px-3 py-1 text-xs font-medium text-background">
+            <span className="mt-1 inline-block rounded-full border border-accent-1/20 bg-accent-1/14 px-3 py-1 text-xs font-medium text-accent-2">
               {account.price} Minimum Deposit
             </span>
           </div>
@@ -95,7 +97,7 @@ const AccountPlanCard = ({ account }) => {
         <div className="w-full space-y-2 text-sm text-text/75">
           <div className="flex items-center justify-between gap-3">
             <span className="font-medium text-text">Account Tier:</span>
-            <span className="rounded border border-accent-1/15 bg-accent-1/10 px-2 py-1 text-xs text-accent-2">
+            <span className="rounded border border-accent-1/18 bg-accent-1/10 px-2 py-1 text-xs text-accent-2">
               {account.spread}
             </span>
           </div>
@@ -107,13 +109,13 @@ const AccountPlanCard = ({ account }) => {
 
           <div className="flex items-center justify-between gap-3">
             <span className="font-medium text-text">AI Tools:</span>
-            <span className={`text-xs font-bold ${account.aiAccess === "Yes" ? "text-accent-1" : "text-text/45"}`}>
+            <span className={`text-xs font-bold ${account.aiAccess === "Yes" ? "text-accent-2" : "text-text/45"}`}>
               {account.aiAccess}
             </span>
           </div>
         </div>
 
-        <hr className="my-4 w-full border-dashed border-accent-1/10" />
+        <hr className="my-4 w-full border-dashed border-accent-1/12" />
 
         <div className="w-full text-sm text-text/75">
           <p className="mb-1 font-semibold text-text">Support:</p>
@@ -134,7 +136,7 @@ const AccountPlanCard = ({ account }) => {
 
       <div className="relative z-10 mt-auto flex justify-center pt-6">
         <button
-          className="rounded-lg border border-accent-1/20 bg-accent-1/10 px-4 py-2 text-center text-sm text-text backdrop-blur-lg transition-all duration-300 hover:border-accent-1 hover:bg-accent-1/20 hover:shadow-[0_0_18px_rgba(255,255,0,0.24)] md:text-base"
+          className="rounded-lg border border-accent-1/20 bg-white/72 px-4 py-2 text-center text-sm text-text backdrop-blur-lg transition-all duration-300 hover:border-accent-1/55 hover:bg-accent-1/12 hover:shadow-[0_0_18px_rgba(126,217,87,0.22)] md:text-base"
           onClick={() => window.open("/contact", "_blank")}
         >
           Trade Now
@@ -170,18 +172,26 @@ const Accounts = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-figtree text-text">
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-28 top-28 h-64 w-64 rounded-full bg-accent-1/8 blur-[120px]" />
-        <div className="absolute right-[8%] top-[18%] h-72 w-72 rounded-full bg-accent-2/8 blur-[140px]" />
-        <div className="absolute bottom-[8%] left-[18%] h-80 w-80 rounded-full bg-accent-1/6 blur-[150px]" />
+        <div className="absolute -left-28 top-28 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
+        <div className="absolute right-[8%] top-[18%] h-72 w-72 rounded-full bg-accent-2/10 blur-[140px]" />
+        <div className="absolute bottom-[8%] left-[18%] h-80 w-80 rounded-full bg-accent-1/8 blur-[150px]" />
       </div>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-border/60">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-16 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
-          <div className="absolute right-[10%] top-[10%] h-72 w-72 rounded-full bg-accent-2/10 blur-[140px]" />
-          <div className="absolute -bottom-10 left-[40%] h-48 w-48 rounded-full bg-accent-1/8 blur-[120px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_20%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.02),transparent_20%)]" />
+      <section className="relative overflow-hidden border-b border-border/70">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,#f8fbf4_0%,#eef9e7_50%,#f8fbf4_100%)]" />
+
+          <div className="absolute -left-20 top-12 h-96 w-[24rem] rounded-full bg-accent-1/28 blur-[110px]" />
+          <div className="absolute right-[4%] top-[8%] h-104 w-104 rounded-full bg-accent-2/24 blur-[120px]" />
+          <div className="absolute -bottom-10 left-[40%] h-72 w-[18rem] rounded-full bg-accent-1/22 blur-[100px]" />
+
+          <div className="absolute left-[8%] top-[12%] h-32 w-32 rounded-full bg-accent-1/36 blur-[48px]" />
+          <div className="absolute right-[16%] top-[18%] h-36 w-36 rounded-full bg-accent-2/30 blur-[54px]" />
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,217,87,0.20),transparent_20%),radial-gradient(circle_at_80%_24%,rgba(79,143,47,0.18),transparent_22%),radial-gradient(circle_at_48%_78%,rgba(126,217,87,0.14),transparent_20%)]" />
+          <div className="absolute inset-0 opacity-35 bg-[linear-gradient(rgba(126,217,87,0.10)_1px,transparent_1px),linear-gradient(90deg,rgba(126,217,87,0.10)_1px,transparent_1px)] bg-size-[72px_72px]" />
+          <div className="absolute inset-0 bg-white/18" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 pb-18 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-32">
@@ -203,7 +213,7 @@ const Accounts = () => {
                   threshold={0.15}
                   config={{ tension: 50, friction: 25 }}
                 >
-                  <div className="inline-flex items-center gap-2 rounded-full border border-accent-1/10 bg-card/70 px-4 py-2 text-xs text-text/70 backdrop-blur-md">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-border/90 bg-white/62 px-4 py-2 text-xs text-text/70 backdrop-blur-md shadow-[0_8px_24px_rgba(31,41,55,0.05)]">
                     <span>Home</span>
                     <Icon icon="solar:alt-arrow-right-bold" className="text-text/35" />
                     <span className="text-accent-2">Accounts</span>
@@ -277,15 +287,15 @@ const Accounts = () => {
                   config={{ tension: 50, friction: 25 }}
                 >
                   <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Plans</p>
                       <p className="mt-2 text-lg font-semibold">6 Tiers</p>
                     </div>
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Leverage</p>
                       <p className="mt-2 text-lg font-semibold">Up to 1:1000</p>
                     </div>
-                    <div className="rounded-2xl border border-accent-1/10 bg-card/70 p-4 backdrop-blur-md">
+                    <div className="rounded-2xl border border-border/90 bg-white/60 p-4 backdrop-blur-md shadow-[0_10px_24px_rgba(31,41,55,0.05)]">
                       <p className="text-xs uppercase tracking-[0.18em] text-text/55">Support</p>
                       <p className="mt-2 text-lg font-semibold">Basic to VIP</p>
                     </div>
@@ -303,12 +313,12 @@ const Accounts = () => {
               config={{ tension: 50, friction: 25 }}
             >
               <div className="relative">
-                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/12 to-accent-2/10 blur-2xl" />
-                <div className="relative overflow-hidden rounded-4xl border border-accent-1/10 bg-card/70 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-md">
+                <div className="absolute -inset-4 rounded-4xl bg-linear-to-br from-accent-1/16 to-accent-2/12 blur-2xl" />
+                <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/60 shadow-[0_16px_44px_rgba(31,41,55,0.08)] backdrop-blur-md">
                   <img src={accountsHero} alt="Trading account hero" className="h-90 w-full object-cover md:h-115" />
-                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/74 via-background/18 to-transparent" />
 
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-accent-1/10 bg-background/50 p-4 backdrop-blur-md">
+                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-border/90 bg-white/55 p-4 backdrop-blur-md shadow-[0_10px_28px_rgba(31,41,55,0.05)]">
                     <p className="text-xs uppercase tracking-[0.2em] text-accent-2">EazyMarkets Accounts</p>
                     <p className="mt-2 text-lg font-semibold text-text">
                       Choose a tier aligned with your strategy and capital level
@@ -322,9 +332,9 @@ const Accounts = () => {
       </section>
 
       {/* INTRO */}
-      <section className="relative border-b border-border/60 py-18 md:py-20">
-        <div className="absolute left-[10%] top-[28%] h-40 w-40 rounded-full bg-accent-1/7 blur-[110px]" />
-        <div className="absolute bottom-[12%] right-[12%] h-48 w-48 rounded-full bg-accent-2/7 blur-[120px]" />
+      <section className="relative border-b border-border/70 py-18 md:py-20">
+        <div className="absolute left-[10%] top-[28%] h-40 w-40 rounded-full bg-accent-1/8 blur-[110px]" />
+        <div className="absolute bottom-[12%] right-[12%] h-48 w-48 rounded-full bg-accent-2/8 blur-[120px]" />
 
         <AnimatedContent
           direction="horizontal"
@@ -358,9 +368,9 @@ const Accounts = () => {
       {/* ACCOUNT PLANS */}
       <section id="account-plans" className="relative overflow-hidden py-18 md:py-20">
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute -left-20 top-[22%] h-36 w-36 rounded-full bg-accent-1 opacity-15 blur-3xl md:h-72 md:w-72" />
-          <div className="absolute left-[40%] top-[45%] h-32 w-32 rounded-full bg-accent-2 opacity-10 blur-3xl md:h-64 md:w-64" />
-          <div className="absolute -right-20 top-[35%] h-40 w-40 rounded-full bg-accent-1 opacity-10 blur-3xl md:h-80 md:w-80" />
+          <div className="absolute -left-20 top-[22%] h-36 w-36 rounded-full bg-accent-1/18 blur-3xl md:h-72 md:w-72" />
+          <div className="absolute left-[40%] top-[45%] h-32 w-32 rounded-full bg-accent-2/14 blur-3xl md:h-64 md:w-64" />
+          <div className="absolute -right-20 top-[35%] h-40 w-40 rounded-full bg-accent-1/14 blur-3xl md:h-80 md:w-80" />
         </div>
 
         <AnimatedContent
@@ -393,7 +403,7 @@ const Accounts = () => {
             {isMobile ? (
               <div className="relative z-10 flex items-center justify-center overflow-hidden">
                 <button onClick={handlePrev} className="absolute -left-4 z-20 p-2" aria-label="Previous">
-                  <Icon icon="mdi:chevron-left" width={34} className="text-accent-1" />
+                  <Icon icon="mdi:chevron-left" width={34} className="text-accent-2" />
                 </button>
 
                 <div className="w-full max-w-xs">
@@ -422,7 +432,7 @@ const Accounts = () => {
                 </div>
 
                 <button onClick={handleNext} className="absolute -right-4 z-20 p-2" aria-label="Next">
-                  <Icon icon="mdi:chevron-right" width={34} className="text-accent-1" />
+                  <Icon icon="mdi:chevron-right" width={34} className="text-accent-2" />
                 </button>
               </div>
             ) : (
@@ -468,8 +478,8 @@ const Accounts = () => {
 
       {/* CTA */}
       <section id="accounts-cta" className="relative py-18 md:py-20">
-        <div className="absolute left-[10%] top-[15%] h-48 w-48 rounded-full bg-accent-1/8 blur-[120px]" />
-        <div className="absolute bottom-[12%] right-[10%] h-56 w-56 rounded-full bg-accent-2/8 blur-[130px]" />
+        <div className="absolute left-[10%] top-[15%] h-48 w-48 rounded-full bg-accent-1/10 blur-[120px]" />
+        <div className="absolute bottom-[12%] right-[10%] h-56 w-56 rounded-full bg-accent-2/10 blur-[130px]" />
 
         <AnimatedContent
           direction="horizontal"
@@ -479,8 +489,9 @@ const Accounts = () => {
           config={{ tension: 50, friction: 25 }}
         >
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            <div className="relative overflow-hidden rounded-4xl border border-border/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.018))] p-8 shadow-[0_24px_90px_rgba(0,0,0,0.28)] sm:p-10 lg:p-14">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,0,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(234,179,8,0.10),transparent_32%)]" />
+            <div className="relative overflow-hidden rounded-4xl border border-border/90 bg-white/58 p-8 shadow-[0_16px_46px_rgba(31,41,55,0.08)] backdrop-blur-xl sm:p-10 lg:p-14">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.80),rgba(255,255,255,0.42))]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(126,217,87,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(79,143,47,0.12),transparent_32%)]" />
 
               <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
                 <div>
@@ -503,13 +514,13 @@ const Accounts = () => {
                   </div>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-border/80 bg-background/60 shadow-[0_16px_60px_rgba(0,0,0,0.22)]">
+                <div className="relative overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/72 shadow-[0_12px_36px_rgba(31,41,55,0.08)]">
                   <img
                     src={homeCTA}
                     alt="Smart trading technology"
                     className="h-64 w-full object-cover transition-transform duration-700 hover:scale-105 sm:h-80"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/90 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-background/75 via-transparent to-transparent" />
                 </div>
               </div>
             </div>
