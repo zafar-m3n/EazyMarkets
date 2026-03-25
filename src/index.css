@@ -3,13 +3,12 @@
 @theme {
   --font-figtree: "Figtree", sans-serif;
 
-  --color-text: #f8fafc;
-  --color-background: #07080b;
+  --color-text: #1f2937;
+  --color-background: #f8fbf4;
 
-  /* Yellow trading theme */
-  --color-accent-1: #ffff00; 
-  --color-accent-2: #eab308; 
+  --color-accent-1: #7ed957;
+  --color-accent-2: #4f8f2f;
 
-  --color-card: #0f1217;
-  --color-border: #1f2937;
+  --color-card: #ffffff;
+  --color-border: #d9e7cf;
 }

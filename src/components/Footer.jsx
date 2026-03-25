@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import logoDark from "@/assets/logoDark.png";
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -10,43 +11,36 @@ function Footer() {
   const yearsActive = Math.floor(diffYears);
 
   return (
-    <footer className="w-full bg-background border-t border-accent-1/20 shadow-[0_-6px_28px_rgba(250,204,21,0.22)]">
-      <div className="max-w-7xl mx-auto px-6 md:px-0 mt-10">
+    <footer className="relative w-full bg-[#0b1a0b] text-white overflow-hidden">
+      {/* Glow Background */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-87.5 bg-accent-1/20 blur-[140px] rounded-full" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 md:px-0 pt-16 pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
           {/* Brand */}
           <div>
-            <h3 className="font-semibold text-xl text-text mb-4">
-              <span className="text-text">Eazy</span>
-              <span className="bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">Markets</span>
-            </h3>
+            <div className="mb-4">
+              <img src={logoDark} alt="EazyMarkets" className="h-20 w-auto" />
+            </div>
 
-            <p className="text-sm md:text-base text-text/70 leading-relaxed mb-4">
+            <p className="text-sm md:text-base text-white/70 leading-relaxed mb-4">
               Premium forex and CFD brokerage with institutional-grade execution, competitive spreads, and modern
               trading technology.
             </p>
 
             <div className="flex items-center gap-3">
               {/* Social icons */}
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
-              >
-                <Icon icon="mdi:twitter" className="w-5 h-5 text-accent-1" />
-              </a>
-
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
-              >
-                <Icon icon="mdi:linkedin" className="w-5 h-5 text-accent-1" />
-              </a>
-
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-background/80 border border-accent-1/30 flex items-center justify-center shadow-[0_0_14px_rgba(250,204,21,0.25)] transition-transform duration-200 hover:scale-110"
-              >
-                <Icon icon="mdi:instagram" className="w-5 h-5 text-accent-1" />
-              </a>
+              {["mdi:twitter", "mdi:linkedin", "mdi:instagram"].map((icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl transition-all duration-200 hover:scale-110 hover:border-accent-1/60 hover:shadow-[0_0_18px_rgba(126,217,87,0.4)]"
+                >
+                  <Icon icon={icon} className="w-5 h-5 text-accent-1" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -54,26 +48,20 @@ function Footer() {
           <div className="grid grid-cols-3 gap-8 lg:col-span-3">
             {/* Trading */}
             <div>
-              <h4 className="font-semibold text-text mb-4">Trading</h4>
+              <h4 className="font-semibold text-white mb-4">Trading</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link
-                    to="/accounts"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
-                  >
+                  <Link to="/accounts" className="footer-link">
                     Account Types
                   </Link>
                 </li>
                 <li>
-                  <Link to="/bots" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
+                  <Link to="/bots" className="footer-link">
                     Trading Bots
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/platforms"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
-                  >
+                  <Link to="/platforms" className="footer-link">
                     Platforms
                   </Link>
                 </li>
@@ -82,26 +70,20 @@ function Footer() {
 
             {/* Company */}
             <div>
-              <h4 className="font-semibold text-text mb-4">Company</h4>
+              <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/about" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
+                  <Link to="/about" className="footer-link">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/education"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
-                  >
+                  <Link to="/education" className="footer-link">
                     Education
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/contact"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
-                  >
+                  <Link to="/contact" className="footer-link">
                     Contact
                   </Link>
                 </li>
@@ -110,18 +92,15 @@ function Footer() {
 
             {/* Legal */}
             <div>
-              <h4 className="font-semibold text-text mb-4">Legal</h4>
+              <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/legal" className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors">
+                  <Link to="/legal" className="footer-link">
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    to="/privacy"
-                    className="text-sm md:text-base text-text/70 hover:text-accent-1 transition-colors"
-                  >
+                  <Link to="/privacy" className="footer-link">
                     Privacy Policy
                   </Link>
                 </li>
@@ -130,11 +109,16 @@ function Footer() {
           </div>
         </div>
 
-        {/* Risk text */}
-        <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-text/70">
+        {/* Divider */}
+        <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-10" />
+
+        {/* Risk text (UNCHANGED content) */}
+        <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-white/70">
           <p>
-            <span className="font-semibold">Risk Management &amp; Confidence in Every Trade with EazyMarkets.</span> At
-            EazyMarkets, we focus on disciplined execution and risk-aware trading. Our technology and strategies are
+            <span className="font-semibold text-white">
+              Risk Management &amp; Confidence in Every Trade with EazyMarkets.
+            </span>{" "}
+            At EazyMarkets, we focus on disciplined execution and risk-aware trading. Our technology and strategies are
             engineered to help identify opportunities while managing risk with precision and consistency.
           </p>
 
@@ -170,16 +154,16 @@ function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 border-t border-accent-1/15">
+        <div className="mt-6 border-t border-white/10">
           <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm md:text-base text-text/60 text-center md:text-left">
+            <p className="text-sm md:text-base text-white/60 text-center md:text-left">
               <span className="text-2xl font-semibold bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">
                 {yearsActive}&nbsp;
               </span>
               years active
             </p>
 
-            <p className="text-sm md:text-base text-text/60 text-center md:text-right">
+            <p className="text-sm md:text-base text-white/60 text-center md:text-right">
               © {year} EazyMarkets. All Rights Reserved.
             </p>
           </div>
