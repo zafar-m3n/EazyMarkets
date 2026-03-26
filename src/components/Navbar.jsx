@@ -12,6 +12,7 @@ function Navbar() {
     { name: "Home", path: "/" },
     { name: "Accounts", path: "/accounts" },
     { name: "Bots", path: "/bots" },
+    { name: "Promotions", path: "/promotions" },
     { name: "Education", path: "/education" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },

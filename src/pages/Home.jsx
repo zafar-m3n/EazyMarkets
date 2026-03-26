@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import Button from "@/components/ui/Button";
 import AnimatedContent from "@/components/ui/AnimatedContent";
+import Welcome from "@/components/Welcome";
 import homeAbout from "@/assets/homeAbout.jpg";
 import homeCTA from "@/assets/homeCTA.jpg";
 import barclays from "@/assets/barclays.webp";
@@ -11,6 +12,7 @@ import jpmorgan from "@/assets/jpmorgan.png";
 import bankofamerica from "@/assets/bankofamerica.png";
 import citibank from "@/assets/citibank.png";
 import ubs from "@/assets/ubs.png";
+import AnniversaryOfferPopup from "@/components/AnniversaryOfferPopup";
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -210,6 +212,7 @@ const Home = () => {
 
   return (
     <div ref={scrollContainerRef} className="min-h-screen overflow-x-hidden bg-background font-figtree text-text">
+      <AnniversaryOfferPopup />
       <style>
         {`
           @keyframes providersMarquee {
@@ -391,6 +394,8 @@ const Home = () => {
           </div>
         </AnimatedContent>
       </section>
+
+      <Welcome />
 
       {/* ========================= MISSION / VISION / VALUE ========================= */}
       <section className="relative border-b border-border/70 py-20 lg:py-24">
