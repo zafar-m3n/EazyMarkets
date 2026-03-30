@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Icon } from "@iconify/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import botsHero from "@/assets/botsHero.jpg";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
 import homeCTA from "@/assets/homeCTA.jpg";
+import useWdith from "@/hooks/useWidth";
 
 const bots = [
   {
-    name: "TrialBot",
+    name: "Trial Bot",
     tag: "Trial",
     price: "No Days Funded",
     supportedMarkets: "Minor Forex",
@@ -19,7 +22,7 @@ const bots = [
     icon: "solar:cup-hot-bold",
   },
   {
-    name: "SwiftAI 1000",
+    name: "CyberAlpha Bot",
     tag: "Moderate",
     price: "$500",
     oldPrice: "$1000",
@@ -32,7 +35,7 @@ const bots = [
     icon: "solar:bolt-bold",
   },
   {
-    name: "ProfitX 2000",
+    name: "StormTrader Bot",
     tag: "Advanced",
     price: "$2000",
     supportedMarkets: "Forex, Commodities",
@@ -44,7 +47,7 @@ const bots = [
     icon: "solar:graph-up-bold",
   },
   {
-    name: "AlphaBot 3000",
+    name: "InfinityCore Bot",
     tag: "Pro Level",
     price: "$3000",
     supportedMarkets: "Stocks + Global Indices",
@@ -56,7 +59,7 @@ const bots = [
     icon: "solar:shield-check-bold",
   },
   {
-    name: "QuantumAI 5000",
+    name: "ClearPath Bot",
     tag: "Premium",
     price: "$5000",
     supportedMarkets: "All Major Markets",
@@ -68,7 +71,7 @@ const bots = [
     icon: "solar:stars-bold",
   },
   {
-    name: "ZenithPro 7500",
+    name: "TechTrend Bot",
     tag: "Elite AI Suite",
     price: "$7500",
     supportedMarkets: "All Markets + Custom Options",
@@ -87,7 +90,7 @@ const bots = [
     icon: "solar:medal-star-bold",
   },
   {
-    name: "XclusiveAI",
+    name: "ProfitPilot Bot",
     tag: "Exclusive",
     price: "$25,000",
     supportedMarkets: "All Markets + Custom Options",
@@ -107,7 +110,7 @@ const bots = [
     icon: "solar:crown-bold",
   },
   {
-    name: "AtomX Ultra",
+    name: "RapidGain Bot",
     tag: "Ultimate Trader",
     price: "$100,000",
     supportedMarkets: "All Markets + Custom Options",
@@ -125,6 +128,69 @@ const bots = [
     cashback: "50% Withdrawable",
     roi: "45% Weekly",
     icon: "solar:atom-bold",
+  },
+];
+
+const accountPlans = [
+  {
+    title: "Basic",
+    price: "$300",
+    spread: "1:25 Leverage",
+    instruments: "Trial Bot, Entry Trading Access",
+    aiAccess: "No",
+    support: ["Basic customer support", "Minimum withdrawal: $10"],
+    extras: ["Maximum functional period: 14 days", "Max open trades: 15"],
+    icon: "solar:shield-user-bold",
+  },
+  {
+    title: "Amateur",
+    price: "$500",
+    spread: "1:50 Leverage",
+    instruments: "Basic Strategies, Limited Daily Signals",
+    aiAccess: "No",
+    support: ["Standard customer support", "Minimum withdrawal: $100"],
+    extras: ["Max open trades: 20", "Beginner & low-risk friendly"],
+    icon: "solar:chart-2-bold",
+  },
+  {
+    title: "Advanced",
+    price: "$1000",
+    spread: "1:100 Leverage",
+    instruments: "Advanced Signals, Custom Risk Settings",
+    aiAccess: "Yes",
+    support: ["Priority customer support", "Minimum withdrawal: $500"],
+    extras: ["Max open trades: 50", "Cashback rewards available"],
+    icon: "solar:rocket-bold",
+  },
+  {
+    title: "Pro",
+    price: "$5000",
+    spread: "1:200 Leverage",
+    instruments: "Smart Trend Analysis, Unlimited Signals",
+    aiAccess: "Yes",
+    support: ["VIP support 24/7", "Minimum withdrawal: $500"],
+    extras: ["Max open trades: 60", "Free risk management consultation"],
+    icon: "solar:graph-up-bold",
+  },
+  {
+    title: "Expert",
+    price: "$15,000",
+    spread: "1:500 Leverage",
+    instruments: "High-Frequency Tools, AI Predictions",
+    aiAccess: "Yes",
+    support: ["Personal Account Manager", "Minimum withdrawal: $1,000"],
+    extras: ["Max open trades: 80", "Priority access to new AI features"],
+    icon: "solar:crown-star-bold",
+  },
+  {
+    title: "VIP Elite",
+    price: "$50,000",
+    spread: "1:1000 Leverage",
+    instruments: "Ultra-Fast Execution, Predictive Analytics",
+    aiAccess: "Yes",
+    support: ["Senior Account Manager", "Priority withdrawal processing"],
+    extras: ["Unlimited open trades", "Private one-on-one mentorship"],
+    icon: "solar:stars-bold",
   },
 ];
 
@@ -148,6 +214,81 @@ const InfoBlock = ({ label, value, list = false }) => (
     )}
   </div>
 );
+
+const AccountPlanCard = ({ account }) => {
+  return (
+    <div className="group relative flex min-h-135 w-full flex-col overflow-hidden rounded-2xl border border-border/90 border-t-4 border-t-accent-1/80 bg-white/58 p-6 shadow-[0_12px_34px_rgba(31,41,55,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/40 hover:shadow-[0_16px_42px_rgba(126,217,87,0.14)]">
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(126,217,87,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(79,143,47,0.12),transparent_24%)]" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/70 to-transparent" />
+      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-1/16 blur-3xl" />
+      <div className="absolute -left-8 bottom-0 h-24 w-24 rounded-full bg-accent-2/14 blur-3xl" />
+
+      <div className="relative z-10">
+        <div className="mb-4 flex items-center space-x-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/25 bg-white/72 text-accent-2 shadow-[0_0_0_1px_rgba(126,217,87,0.08),0_0_22px_rgba(126,217,87,0.18)]">
+            <Icon icon={account.icon} width={26} />
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-text">{account.title}</h3>
+            <span className="mt-1 inline-block rounded-full border border-accent-1/20 bg-accent-1/14 px-3 py-1 text-xs font-medium text-accent-2">
+              {account.price} Minimum Deposit
+            </span>
+          </div>
+        </div>
+
+        <div className="w-full space-y-2 text-sm text-text/75">
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-medium text-text">Account Tier:</span>
+            <span className="rounded border border-accent-1/18 bg-accent-1/10 px-2 py-1 text-xs text-accent-2">
+              {account.spread}
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-medium text-text">Access:</span>
+            <span className="text-right text-xs">{account.instruments}</span>
+          </div>
+
+          <div className="flex items-center justify-between gap-3">
+            <span className="font-medium text-text">AI Tools:</span>
+            <span className={`text-xs font-bold ${account.aiAccess === "Yes" ? "text-accent-2" : "text-text/45"}`}>
+              {account.aiAccess}
+            </span>
+          </div>
+        </div>
+
+        <hr className="my-4 w-full border-dashed border-accent-1/12" />
+
+        <div className="w-full text-sm text-text/75">
+          <p className="mb-1 font-semibold text-text">Support:</p>
+          <ul className="list-inside list-disc space-y-1 marker:text-accent-2">
+            {account.support.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+
+          <p className="mb-1 mt-4 font-semibold text-text">Extras:</p>
+          <ul className="list-inside list-disc space-y-1 marker:text-accent-2">
+            {account.extras.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="relative z-10 mt-auto flex justify-center pt-6">
+        <button
+          className="rounded-lg border border-accent-1/20 bg-white/72 px-4 py-2 text-center text-sm text-text backdrop-blur-lg transition-all duration-300 hover:border-accent-1/55 hover:bg-accent-1/12 hover:shadow-[0_0_18px_rgba(126,217,87,0.22)] md:text-base"
+          onClick={() => window.open("/contact", "_blank")}
+        >
+          Trade Now
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const BotCard = ({ bot, index }) => {
   const isEven = index % 2 === 0;
@@ -227,6 +368,18 @@ const BotCard = ({ bot, index }) => {
 };
 
 const Bots = () => {
+  const { width, breakpoints } = useWdith();
+  const isMobile = width < breakpoints.md;
+  const swiperRef = useRef(null);
+
+  const handlePrev = () => {
+    if (swiperRef.current) swiperRef.current.slidePrev();
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) swiperRef.current.slideNext();
+  };
+
   const scrollToBots = () => {
     const el = document.getElementById("bots-list");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -402,6 +555,118 @@ const Bots = () => {
             </AnimatedContent>
           </div>
         </div>
+      </section>
+
+      {/* BOT TRADING ACCOUNTS */}
+      <section id="bot-trading-accounts" className="relative overflow-hidden border-b border-border/70 py-18 md:py-20">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute -left-20 top-[22%] h-36 w-36 rounded-full bg-accent-1/18 blur-3xl md:h-72 md:w-72" />
+          <div className="absolute left-[40%] top-[45%] h-32 w-32 rounded-full bg-accent-2/14 blur-3xl md:h-64 md:w-64" />
+          <div className="absolute -right-20 top-[35%] h-40 w-40 rounded-full bg-accent-1/14 blur-3xl md:h-80 md:w-80" />
+        </div>
+
+        <AnimatedContent
+          direction="horizontal"
+          reverse={false}
+          distance={100}
+          threshold={0.15}
+          config={{ tension: 50, friction: 25 }}
+        >
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <AnimatedContent
+              distance={80}
+              direction={isMobile ? "horizontal" : "vertical"}
+              reverse={false}
+              config={{ tension: 50, friction: 25 }}
+              initialOpacity={0}
+              animateOpacity
+              scale={1}
+              threshold={0.1}
+            >
+              <div className="mx-auto mb-14 max-w-4xl px-4 text-center sm:px-6">
+                <p className="text-sm uppercase tracking-[0.22em] text-accent-2">/ bot trading accounts /</p>
+                <h2 className="mt-3 mb-3 text-2xl font-semibold md:text-4xl">Bot Trading Accounts</h2>
+                <p className="text-sm leading-8 text-text/70 md:text-base">
+                  Choose an account type that matches the way you want to access automated trading, leverage, support,
+                  and AI-powered tools alongside your selected bot setup.
+                </p>
+              </div>
+            </AnimatedContent>
+
+            {isMobile ? (
+              <div className="relative z-10 flex items-center justify-center overflow-hidden">
+                <button onClick={handlePrev} className="absolute -left-4 z-20 p-2" aria-label="Previous">
+                  <Icon icon="mdi:chevron-left" width={34} className="text-accent-2" />
+                </button>
+
+                <div className="w-full max-w-xs">
+                  <Swiper
+                    onSwiper={(swiper) => {
+                      swiperRef.current = swiper;
+                    }}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                  >
+                    {accountPlans.map((account, index) => (
+                      <SwiperSlide key={index}>
+                        <AnimatedContent
+                          direction="vertical"
+                          reverse={false}
+                          distance={70}
+                          delay={index * 60}
+                          threshold={0.1}
+                          config={{ tension: 50, friction: 25 }}
+                        >
+                          <AccountPlanCard account={account} />
+                        </AnimatedContent>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+
+                <button onClick={handleNext} className="absolute -right-4 z-20 p-2" aria-label="Next">
+                  <Icon icon="mdi:chevron-right" width={34} className="text-accent-2" />
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="relative z-10 mb-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                  {accountPlans.slice(0, 3).map((account, index) => (
+                    <AnimatedContent
+                      key={index}
+                      direction="vertical"
+                      reverse={false}
+                      distance={70}
+                      delay={index * 80}
+                      threshold={0.1}
+                      config={{ tension: 50, friction: 25 }}
+                    >
+                      <AccountPlanCard account={account} />
+                    </AnimatedContent>
+                  ))}
+                </div>
+
+                <div className="relative z-10 grid grid-cols-1 gap-10 md:grid-cols-3">
+                  {accountPlans.slice(3).map((account, index) => (
+                    <AnimatedContent
+                      key={index}
+                      direction="vertical"
+                      reverse={false}
+                      distance={70}
+                      delay={index * 80}
+                      threshold={0.1}
+                      config={{ tension: 50, friction: 25 }}
+                    >
+                      <div className="w-full">
+                        <AccountPlanCard account={account} />
+                      </div>
+                    </AnimatedContent>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        </AnimatedContent>
       </section>
 
       {/* INTRO */}
