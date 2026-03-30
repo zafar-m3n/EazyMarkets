@@ -13,6 +13,7 @@
   --color-border: #d9e7cf;
 
   --animate-float: float 4s ease-in-out infinite;
+  --animate-providers-marquee: providersMarquee 116s linear infinite;
 
   @keyframes float {
     0% {
@@ -23,6 +24,15 @@
     }
     100% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes providersMarquee {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }

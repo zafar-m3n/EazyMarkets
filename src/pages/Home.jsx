@@ -6,12 +6,6 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 import Welcome from "@/components/Welcome";
 import homeAbout from "@/assets/homeAbout.jpg";
 import homeCTA from "@/assets/homeCTA.jpg";
-import barclays from "@/assets/barclays.webp";
-import hsbc from "@/assets/hsbc.png";
-import jpmorgan from "@/assets/jpmorgan.png";
-import bankofamerica from "@/assets/bankofamerica.png";
-import citibank from "@/assets/citibank.png";
-import ubs from "@/assets/ubs.png";
 import hero1 from "@/assets/hero1.png";
 import hero2 from "@/assets/hero2.png";
 import hero3 from "@/assets/hero3.png";
@@ -20,6 +14,35 @@ import hero2Mobile from "@/assets/hero2Mobile.png";
 import hero3Mobile from "@/assets/hero3Mobile.png";
 import AnniversaryOfferPopup from "@/components/AnniversaryOfferPopup";
 import useWidth from "@/hooks/useWidth";
+import rakbank from "@/assets/banks/rakbank.png";
+import bankofamerica from "@/assets/banks/bankofamerica.png";
+import hsbc from "@/assets/banks/hsbc.png";
+import citibank from "@/assets/banks/citibank.png";
+import wellsFargo from "@/assets/banks/wellsfargo.png";
+import adcb from "@/assets/banks/adcb.png";
+import goldmanSachs from "@/assets/banks/goldmansachs.png";
+import fab from "@/assets/banks/fab.png";
+import barclays from "@/assets/banks/barclays.png";
+import jpmorgan from "@/assets/banks/jpmorgan.png";
+import icbc from "@/assets/banks/icbc.png";
+import creditsuisse from "@/assets/banks/creditsuisse.png";
+import capitalone from "@/assets/banks/capitalone.png";
+import adib from "@/assets/banks/adib.png";
+import standardChartered from "@/assets/banks/standardchartered.png";
+import nbo from "@/assets/banks/nbo.png";
+import qnb from "@/assets/banks/qnb.png";
+import sabb from "@/assets/banks/sabb.png";
+import nbk from "@/assets/banks/nbk.png";
+import ubs from "@/assets/banks/ubs.png";
+import rbc from "@/assets/banks/rbc.png";
+import deutsche from "@/assets/banks/deutsche.png";
+import lloyds from "@/assets/banks/lloydsbankinggroup.png";
+import anz from "@/assets/banks/anz.png";
+import charlesschwab from "@/assets/banks/charlesschwab.png";
+import rabo from "@/assets/banks/rabo.png";
+import dbs from "@/assets/banks/dbs.png";
+import westpac from "@/assets/banks/westpac.png";
+import bayerische from "@/assets/banks/bayerische.png";
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
@@ -160,13 +183,92 @@ const Home = () => {
     },
   ];
 
+  const featureCards = [
+    {
+      icon: "solar:bolt-bold",
+      title: "AI-Powered Trade Signals",
+      stat: "Core Engine",
+      description:
+        "Get high-speed market intelligence backed by pattern detection, momentum analysis, and structured signal logic designed to help traders identify opportunities with greater clarity and timing. Includes real-time analysis, faster market reaction, and decision support with less guesswork.",
+      className: "lg:col-span-2",
+    },
+    {
+      icon: "solar:danger-triangle-bold",
+      title: "Integrated Risk Controls",
+      stat: "Risk Layer",
+      description:
+        "Execute with stronger discipline using tools for exposure control, position awareness, and trade protection that help keep every move aligned with your risk framework. Built around position discipline, exposure awareness, and protective monitoring.",
+      className: "lg:col-span-1",
+    },
+    {
+      icon: "solar:chart-2-bold",
+      title: "Performance Analytics",
+      description:
+        "Review strategy outcomes, timing, and behaviour through clearer performance insight so traders can understand what is working and where refinement is needed.",
+      className: "lg:col-span-1",
+    },
+    {
+      icon: "solar:cursor-bold",
+      title: "Smart Automation",
+      description:
+        "Reduce hesitation with automated support that keeps execution closer to your intended trading logic and helps traders stay more consistent in fast markets.",
+      className: "lg:col-span-1",
+    },
+    {
+      icon: "solar:bell-bold",
+      title: "Instant Market Alerts",
+      description:
+        "Stay ready with alerting systems that highlight emerging setups, changes in momentum, and key market shifts as they happen.",
+      className: "lg:col-span-1",
+    },
+    {
+      icon: "solar:lock-keyhole-bold",
+      title: "Secure Trading Environment",
+      stat: "Reliability Layer",
+      description:
+        "Trade on infrastructure built for reliability, access protection, and a more dependable experience across live market activity, including protected sessions, stable infrastructure, and reliable access.",
+      className: "lg:col-span-2",
+    },
+    {
+      icon: "solar:cpu-bolt-bold",
+      title: "Adaptive Strategy Intelligence",
+      stat: "AI Layer",
+      description:
+        "Continuously refine trading behaviour with adaptive models that respond to changing market conditions, helping traders stay aligned with evolving trends, volatility shifts, and momentum patterns without relying on static strategies.",
+      className: "lg:col-span-1",
+    },
+  ];
+
   const providerLogos = [
-    { name: "JP Morgan", src: jpmorgan },
-    { name: "HSBC", src: hsbc },
+    { name: "RAK Bank", src: rakbank },
     { name: "Bank of America", src: bankofamerica },
+    { name: "HSBC", src: hsbc },
+    { name: "Citibank", src: citibank },
+    { name: "Wells Fargo", src: wellsFargo },
+    { name: "Abu Dhabi Commercial Bank", src: adcb },
+    { name: "Goldman Sachs", src: goldmanSachs },
+    { name: "First Abu Dhabi Bank", src: fab },
     { name: "Barclays", src: barclays },
-    { name: "Citi", src: citibank },
+    { name: "JP Morgan Chase", src: jpmorgan },
+    { name: "Industrial and Commercial Bank of China", src: icbc },
+    { name: "Credit Suisse", src: creditsuisse },
+    { name: "Capital One", src: capitalone },
+    { name: "ADIB", src: adib },
+    { name: "Standard Chartered", src: standardChartered },
+    { name: "National Bank of Oman", src: nbo },
+    { name: "Qatar National Bank", src: qnb },
+    { name: "Saudi British Bank", src: sabb },
+    { name: "National Bank of Kuwait", src: nbk },
     { name: "UBS", src: ubs },
+    { name: "Royal Bank of Canada", src: rbc },
+    { name: "Deutsche Bank", src: deutsche },
+    { name: "Lloyds Banking Group", src: lloyds },
+    { name: "ANZ Group", src: anz },
+    { name: "Charles Schwab Corporation", src: charlesschwab },
+    { name: "Rabo Bank", src: rabo },
+    { name: "DBS", src: dbs },
+    { name: "Westpac Australia's first bank", src: westpac },
+    { name: "Bayerische Landesbank", src: bayerische },
   ];
 
   const faqs = [
@@ -261,7 +363,7 @@ const Home = () => {
   return (
     <div ref={scrollContainerRef} className="min-h-screen overflow-x-hidden bg-background font-figtree text-text">
       <AnniversaryOfferPopup />
-      <style>
+      {/* <style>
         {`
           @keyframes providersMarquee {
             from {
@@ -271,63 +373,13 @@ const Home = () => {
               transform: translateX(-50%);
             }
           }
-
-          @keyframes heroBlobOne {
-            0%, 100% {
-              transform: translate3d(0, 0, 0) scale(1);
-            }
-            50% {
-              transform: translate3d(28px, -22px, 0) scale(1.12);
-            }
-          }
-
-          @keyframes heroBlobTwo {
-            0%, 100% {
-              transform: translate3d(0, 0, 0) scale(1);
-            }
-            50% {
-              transform: translate3d(-26px, 24px, 0) scale(1.1);
-            }
-          }
-
-          @keyframes heroBlobThree {
-            0%, 100% {
-              transform: translate3d(0, 0, 0) scale(1);
-            }
-            50% {
-              transform: translate3d(18px, 20px, 0) scale(1.08);
-            }
-          }
-
-          @keyframes heroPulse {
-            0%, 100% {
-              opacity: 0.85;
-              filter: blur(70px);
-            }
-            50% {
-              opacity: 1;
-              filter: blur(100px);
-            }
-          }
-
+            
           .providers-marquee {
-            animation: providersMarquee 24s linear infinite;
+            animation: providersMarquee 116s linear infinite;
             will-change: transform;
           }
-
-          .hero-blob-1 {
-            animation: heroBlobOne 14s ease-in-out infinite, heroPulse 8s ease-in-out infinite;
-          }
-
-          .hero-blob-2 {
-            animation: heroBlobTwo 16s ease-in-out infinite, heroPulse 9s ease-in-out infinite;
-          }
-
-          .hero-blob-3 {
-            animation: heroBlobThree 18s ease-in-out infinite, heroPulse 10s ease-in-out infinite;
-          }
         `}
-      </style>
+      </style> */}
 
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-32 top-32 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
@@ -483,7 +535,7 @@ const Home = () => {
         <div className="absolute left-[15%] top-[15%] h-40 w-40 rounded-full bg-accent-1/8 blur-[100px]" />
         <div className="absolute bottom-[10%] right-[10%] h-48 w-48 rounded-full bg-accent-2/8 blur-[110px]" />
 
-        <AnimatedContent {...sectionAnimation(5)}>
+        <AnimatedContent {...sectionAnimation(1)}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Liquidity Providers</p>
@@ -500,7 +552,7 @@ const Home = () => {
               <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
               <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
 
-              <div className="providers-marquee flex w-max gap-5">
+              <div className="animate-providers-marquee flex w-max gap-5 will-change-transform">
                 {repeatedProviders.map((provider, index) => (
                   <div
                     key={`${provider.name}-${index}`}
@@ -525,7 +577,7 @@ const Home = () => {
       {/* ========================= MISSION / VISION / VALUE ========================= */}
       <section className="relative border-b border-border/70 py-20 lg:py-24">
         <div className="absolute right-[8%] top-[20%] h-44 w-44 rounded-full bg-accent-2/8 blur-[110px]" />
-        <AnimatedContent {...sectionAnimation(1)}>
+        <AnimatedContent {...sectionAnimation(2)}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Mission, Vision & Value</p>
@@ -550,7 +602,7 @@ const Home = () => {
       {/* ========================= HOW IT WORKS ========================= */}
       <section className="relative border-b border-border/70 py-20 lg:py-24">
         <div className="absolute bottom-[10%] left-[6%] h-48 w-48 rounded-full bg-accent-1/8 blur-[120px]" />
-        <AnimatedContent {...sectionAnimation(2)}>
+        <AnimatedContent {...sectionAnimation(3)}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">How AI Trading Works</p>
@@ -575,7 +627,7 @@ const Home = () => {
       {/* ========================= AWARDS ========================= */}
       <section className="relative border-b border-border/70 py-20 lg:py-24">
         <div className="absolute right-[10%] top-[18%] h-40 w-40 rounded-full bg-accent-1/8 blur-[100px]" />
-        <AnimatedContent {...sectionAnimation(3)}>
+        <AnimatedContent {...sectionAnimation(4)}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Awards & Recognition</p>
@@ -619,7 +671,7 @@ const Home = () => {
         <div className="absolute left-[8%] top-[20%] h-40 w-40 rounded-full bg-accent-2/10 blur-[110px]" />
         <div className="absolute bottom-[12%] right-[12%] h-52 w-52 rounded-full bg-accent-1/8 blur-[120px]" />
 
-        <AnimatedContent {...sectionAnimation(4)}>
+        <AnimatedContent {...sectionAnimation(5)}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Powerful Features</p>
@@ -632,179 +684,10 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="mt-12 grid auto-rows-[minmax(220px,1fr)] grid-cols-1 gap-6 lg:grid-cols-12">
-              <div className="group relative overflow-hidden rounded-4xl border border-border/90 bg-white/58 p-7 shadow-[0_14px_42px_rgba(31,41,55,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-1/45 hover:shadow-[0_18px_48px_rgba(126,217,87,0.15)] lg:col-span-7 lg:row-span-2 lg:p-8">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.74),rgba(255,255,255,0.4))]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(126,217,87,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(79,143,47,0.10),transparent_32%)]" />
-                <div className="absolute -right-10 top-10 h-40 w-40 rounded-full bg-accent-1/16 blur-3xl" />
-                <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/75 to-transparent" />
-
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-3xl text-accent-2 shadow-[0_0_0_1px_rgba(126,217,87,0.08),0_0_26px_rgba(126,217,87,0.20)]">
-                      <Icon icon="solar:bolt-bold" />
-                    </div>
-
-                    <div className="rounded-full border border-accent-1/25 bg-white/80 px-3 py-1.5 text-xs font-medium tracking-[0.22em] text-accent-2">
-                      CORE ENGINE
-                    </div>
-                  </div>
-
-                  <div className="mt-8 max-w-2xl">
-                    <h3 className="text-2xl font-semibold leading-tight md:text-3xl">AI-Powered Trade Signals</h3>
-                    <p className="mt-4 text-sm leading-8 text-text/74 md:text-base">
-                      Get high-speed market intelligence backed by pattern detection, momentum analysis, and structured
-                      signal logic designed to help traders identify opportunities with greater clarity and timing.
-                    </p>
-                  </div>
-
-                  <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-2xl border border-border/80 bg-white/72 p-4 backdrop-blur-md shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <p className="text-xs uppercase tracking-[0.18em] text-accent-2/85">Signal Quality</p>
-                      <p className="mt-2 text-lg font-semibold">Real-time analysis</p>
-                    </div>
-
-                    <div className="rounded-2xl border border-border/80 bg-white/72 p-4 backdrop-blur-md shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <p className="text-xs uppercase tracking-[0.18em] text-accent-2/85">Timing</p>
-                      <p className="mt-2 text-lg font-semibold">Faster market reaction</p>
-                    </div>
-
-                    <div className="rounded-2xl border border-border/80 bg-white/72 p-4 backdrop-blur-md shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <p className="text-xs uppercase tracking-[0.18em] text-accent-2/85">Decision Support</p>
-                      <p className="mt-2 text-lg font-semibold">Less guesswork</p>
-                    </div>
-                  </div>
-
-                  <div className="mt-auto flex items-center gap-2 pt-8 text-sm font-medium text-accent-2">
-                    <span>Built for active execution</span>
-                    <Icon icon="solar:arrow-right-up-bold" className="text-base" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-4xl border border-border/90 bg-white/58 p-6 shadow-[0_12px_38px_rgba(31,41,55,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-accent-1/45 hover:shadow-[0_16px_44px_rgba(126,217,87,0.14)] lg:col-span-5 lg:row-span-2 lg:p-7">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(126,217,87,0.16),transparent_30%)]" />
-                <div className="absolute -left-8 bottom-0 h-28 w-28 rounded-full bg-accent-2/14 blur-3xl" />
-
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-2xl text-accent-2 shadow-[0_0_0_1px_rgba(126,217,87,0.08),0_0_22px_rgba(126,217,87,0.18)]">
-                    <Icon icon="solar:danger-triangle-bold" />
-                  </div>
-
-                  <div className="mt-6 inline-flex w-fit items-center rounded-full border border-border/90 bg-white/78 px-3 py-1.5 text-xs text-text/65">
-                    Risk Layer
-                  </div>
-
-                  <h3 className="mt-4 text-2xl font-semibold leading-tight">Integrated Risk Controls</h3>
-
-                  <p className="mt-4 text-sm leading-8 text-text/74 md:text-base">
-                    Execute with stronger discipline using tools for exposure control, position awareness, and trade
-                    protection that help keep every move aligned with your risk framework.
-                  </p>
-
-                  <div className="mt-8 space-y-3">
-                    <div className="rounded-2xl border border-border/80 bg-white/72 px-4 py-3 shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <div className="flex items-center gap-2 text-sm font-medium text-text/90">
-                        <Icon icon="solar:shield-check-bold" className="text-accent-2" />
-                        Position discipline
-                      </div>
-                    </div>
-
-                    <div className="rounded-2xl border border-border/80 bg-white/72 px-4 py-3 shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <div className="flex items-center gap-2 text-sm font-medium text-text/90">
-                        <Icon icon="solar:graph-down-bold" className="text-accent-2" />
-                        Exposure awareness
-                      </div>
-                    </div>
-
-                    <div className="rounded-2xl border border-border/80 bg-white/72 px-4 py-3 shadow-[0_8px_24px_rgba(31,41,55,0.04)]">
-                      <div className="flex items-center gap-2 text-sm font-medium text-text/90">
-                        <Icon icon="solar:alarm-bold" className="text-accent-2" />
-                        Protective monitoring
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-auto flex items-center gap-2 pt-8 text-sm font-medium text-accent-2">
-                    <span>Designed for consistency</span>
-                    <Icon icon="solar:arrow-right-up-bold" className="text-base" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/58 p-6 shadow-[0_10px_30px_rgba(31,41,55,0.07)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/45 hover:shadow-[0_14px_36px_rgba(126,217,87,0.13)] lg:col-span-4">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
-                <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-accent-1/14 blur-3xl" />
-                <div className="relative z-10">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-xl text-accent-2 shadow-[0_0_18px_rgba(126,217,87,0.16)]">
-                    <Icon icon="solar:chart-2-bold" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold">Performance Analytics</h3>
-                  <p className="mt-3 text-sm leading-7 text-text/72">
-                    Review strategy outcomes, timing, and behaviour through clearer performance insight.
-                  </p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/58 p-6 shadow-[0_10px_30px_rgba(31,41,55,0.07)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/45 hover:shadow-[0_14px_36px_rgba(126,217,87,0.13)] lg:col-span-4">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
-                <div className="absolute -left-8 bottom-0 h-24 w-24 rounded-full bg-accent-2/14 blur-3xl" />
-                <div className="relative z-10">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-xl text-accent-2 shadow-[0_0_18px_rgba(126,217,87,0.16)]">
-                    <Icon icon="solar:cursor-bold" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold">Smart Automation</h3>
-                  <p className="mt-3 text-sm leading-7 text-text/72">
-                    Reduce hesitation with automated support that keeps execution closer to your intended trading logic.
-                  </p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-[1.75rem] border border-border/90 bg-white/58 p-6 shadow-[0_10px_30px_rgba(31,41,55,0.07)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/45 hover:shadow-[0_14px_36px_rgba(126,217,87,0.13)] lg:col-span-4">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
-                <div className="absolute -right-8 bottom-0 h-24 w-24 rounded-full bg-accent-1/14 blur-3xl" />
-                <div className="relative z-10">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-xl text-accent-2 shadow-[0_0_18px_rgba(126,217,87,0.16)]">
-                    <Icon icon="solar:bell-bold" />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold">Instant Market Alerts</h3>
-                  <p className="mt-3 text-sm leading-7 text-text/72">
-                    Stay ready with alerting systems that highlight emerging setups and momentum shifts as they happen.
-                  </p>
-                </div>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-[1.9rem] border border-border/90 bg-white/58 p-6 shadow-[0_12px_36px_rgba(31,41,55,0.08)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/45 hover:shadow-[0_16px_42px_rgba(126,217,87,0.13)] lg:col-span-12 lg:p-7">
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.76),rgba(255,255,255,0.42))]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_left_center,rgba(126,217,87,0.12),transparent_22%),radial-gradient(circle_at_right_center,rgba(79,143,47,0.10),transparent_22%)]" />
-
-                <div className="relative z-10 grid items-center gap-6 lg:grid-cols-[auto_1fr_auto]">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-accent-1/30 bg-white/75 text-2xl text-accent-2 shadow-[0_0_0_1px_rgba(126,217,87,0.08),0_0_22px_rgba(126,217,87,0.18)]">
-                    <Icon icon="solar:lock-keyhole-bold" />
-                  </div>
-
-                  <div>
-                    <h3 className="text-xl font-semibold md:text-2xl">Secure Trading Environment</h3>
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-text/72 md:text-base">
-                      Trade on infrastructure built for reliability, access protection, and a more dependable experience
-                      across live market activity.
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    <div className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-sm text-text/75 shadow-[0_8px_20px_rgba(31,41,55,0.04)]">
-                      Protected sessions
-                    </div>
-                    <div className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-sm text-text/75 shadow-[0_8px_20px_rgba(31,41,55,0.04)]">
-                      Stable infrastructure
-                    </div>
-                    <div className="rounded-full border border-border/80 bg-white/72 px-4 py-2 text-sm text-text/75 shadow-[0_8px_20px_rgba(31,41,55,0.04)]">
-                      Reliable access
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-12 grid auto-rows-fr grid-cols-1 gap-6 lg:grid-cols-3">
+              {featureCards.map((card) => (
+                <React.Fragment key={card.title}>{renderBentoCard(card)}</React.Fragment>
+              ))}
             </div>
           </div>
         </AnimatedContent>
