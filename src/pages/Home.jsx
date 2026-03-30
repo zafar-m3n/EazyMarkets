@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import Button from "@/components/ui/Button";
@@ -12,11 +12,59 @@ import jpmorgan from "@/assets/jpmorgan.png";
 import bankofamerica from "@/assets/bankofamerica.png";
 import citibank from "@/assets/citibank.png";
 import ubs from "@/assets/ubs.png";
+import hero1 from "@/assets/hero1.png";
+import hero2 from "@/assets/hero2.png";
+import hero3 from "@/assets/hero3.png";
+import hero1Mobile from "@/assets/hero1Mobile.png";
+import hero2Mobile from "@/assets/hero2Mobile.png";
+import hero3Mobile from "@/assets/hero3Mobile.png";
 import AnniversaryOfferPopup from "@/components/AnniversaryOfferPopup";
+import useWidth from "@/hooks/useWidth";
 
 const Home = () => {
   const scrollContainerRef = useRef(null);
   const [openFaq, setOpenFaq] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const { width, breakpoints } = useWidth();
+  const isMobile = width < breakpoints.md;
+
+  const heroSlides = [
+    {
+      image: isMobile ? hero1Mobile : hero1,
+      eyebrow: "Human Insight",
+      title: "Trade with confidence guided by experience",
+      description:
+        "Combine market expertise with powerful platform tools designed to help traders read momentum, manage timing, and act with greater precision.",
+      primaryButton: "Open Account",
+      secondaryButton: "Explore Features",
+    },
+    {
+      image: isMobile ? hero2Mobile : hero2,
+      eyebrow: "AI Intelligence",
+      title: "Let AI uncover opportunities in real time",
+      description:
+        "Advanced trading intelligence scans fast-moving markets, detects patterns, and supports smarter decisions with speed, structure, and clarity.",
+      primaryButton: "Get Started",
+      secondaryButton: "See How It Works",
+    },
+    {
+      image: isMobile ? hero3Mobile : hero3,
+      eyebrow: "Global Markets",
+      title: "Access modern trading built for active markets",
+      description:
+        "Trade in a professional environment with live data, intelligent execution support, and risk-aware tools built for serious market participation.",
+      primaryButton: "Start Trading",
+      secondaryButton: "Contact Us",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 7500);
+
+    return () => clearInterval(interval);
+  }, [heroSlides.length]);
 
   const tickerTexts = [
     "AI SIGNALS • RISK CONTROLS • BACKTESTED STRATEGIES • REAL-TIME ALERTS • LOW-LATENCY EXECUTION •",
@@ -289,85 +337,118 @@ const Home = () => {
 
       {/* ========================= HERO ========================= */}
       <section className="relative min-h-[72vh] overflow-hidden border-b border-border/70 lg:min-h-screen">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,#f8fbf4_0%,#eef9e7_50%,#f8fbf4_100%)]" />
-
-          <div className="hero-blob-1 absolute -left-20 top-10 h-112 w-md rounded-full bg-accent-1/55" />
-          <div className="hero-blob-2 absolute -right-24 top-20 h-120 w-120 rounded-full bg-accent-2/50" />
-          <div className="hero-blob-3 absolute left-[25%] -bottom-24 h-104 w-104 rounded-full bg-accent-1/40" />
-
-          <div className="absolute left-[10%] top-[15%] h-40 w-40 rounded-full bg-accent-1/70 blur-[45px]" />
-          <div className="absolute right-[12%] top-[20%] h-44 w-44 rounded-full bg-accent-2/65 blur-[50px]" />
-          <div className="absolute left-[35%] bottom-[15%] h-36 w-36 rounded-full bg-accent-1/60 blur-2xl" />
-
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(126,217,87,0.35),transparent_20%),radial-gradient(circle_at_80%_25%,rgba(79,143,47,0.32),transparent_22%),radial-gradient(circle_at_50%_80%,rgba(126,217,87,0.28),transparent_20%)]" />
-
-          <div className="absolute inset-0 opacity-40 bg-[linear-gradient(rgba(126,217,87,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(126,217,87,0.14)_1px,transparent_1px)] bg-size-[70px_70px]" />
-
-          <div className="absolute inset-0 bg-white/20" />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-background" />
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.title}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                activeSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="h-full w-full object-cover object-center md:object-top"
+              />
+              <div className="absolute inset-0 bg-black/28 md:bg-black/40" />
+              <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.34)_42%,rgba(0,0,0,0.14)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.48)_0%,rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.10)_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_24%)]" />
+            </div>
+          ))}
         </div>
 
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-background" />
+
         <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-6 lg:min-h-screen lg:px-8 lg:pb-0">
-          <div className="mx-auto max-w-3xl text-center lg:flex lg:min-h-[calc(100vh-7rem)] lg:flex-col lg:justify-center">
-            <AnimatedContent
-              direction="vertical"
-              distance={90}
-              delay={0}
-              threshold={0.25}
-              config={{ tension: 52, friction: 24 }}
-            >
-              <p className="text-sm text-text/70 md:text-base">
-                AI-powered trading built for clarity, speed, and disciplined execution.
-              </p>
-            </AnimatedContent>
+          <div className="grid min-h-[calc(72vh-4rem)] items-center lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[1fr_auto] lg:gap-8">
+            <div className="max-w-3xl">
+              {heroSlides.map((slide, index) => (
+                <div
+                  key={slide.title}
+                  className={`transition-all duration-700 ${
+                    activeSlide === index
+                      ? "visible translate-y-0 opacity-100"
+                      : "invisible absolute translate-y-4 opacity-0"
+                  }`}
+                >
+                  {activeSlide === index && (
+                    <>
+                      <AnimatedContent
+                        direction="vertical"
+                        distance={70}
+                        delay={0}
+                        threshold={0.2}
+                        config={{ tension: 52, friction: 24 }}
+                      >
+                        <p className="text-sm font-medium uppercase tracking-[0.28em] text-white/80 md:text-base">
+                          {slide.eyebrow}
+                        </p>
+                      </AnimatedContent>
 
-            <AnimatedContent
-              direction="vertical"
-              distance={90}
-              delay={120}
-              threshold={0.25}
-              config={{ tension: 52, friction: 24 }}
-            >
-              <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-                Trade with{" "}
-                <span className="bg-linear-to-r from-accent-1 via-accent-1 to-accent-2 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(126,217,87,0.35)]">
-                  intelligence
-                </span>{" "}
-                backed by AI
-              </h1>
-            </AnimatedContent>
+                      <AnimatedContent
+                        direction="vertical"
+                        distance={70}
+                        delay={120}
+                        threshold={0.2}
+                        config={{ tension: 52, friction: 24 }}
+                      >
+                        <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">
+                          {slide.title}
+                        </h1>
+                      </AnimatedContent>
 
-            <AnimatedContent
-              direction="vertical"
-              distance={90}
-              delay={220}
-              threshold={0.25}
-              config={{ tension: 52, friction: 24 }}
-            >
-              <p className="mt-5 text-sm leading-relaxed text-text/70 md:text-lg">
-                Our platform combines real-time analysis, smart automation, and risk-aware tools to help traders move
-                with greater confidence in fast-changing markets.
-              </p>
-            </AnimatedContent>
+                      <AnimatedContent
+                        direction="vertical"
+                        distance={70}
+                        delay={220}
+                        threshold={0.2}
+                        config={{ tension: 52, friction: 24 }}
+                      >
+                        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/85 md:text-lg">
+                          {slide.description}
+                        </p>
+                      </AnimatedContent>
 
-            <AnimatedContent
-              direction="vertical"
-              distance={90}
-              delay={320}
-              threshold={0.25}
-              config={{ tension: 52, friction: 24 }}
-            >
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Button variant="primary" icon="mdi:flash">
-                  Open Account
-                </Button>
+                      <AnimatedContent
+                        direction="vertical"
+                        distance={70}
+                        delay={320}
+                        threshold={0.2}
+                        config={{ tension: 52, friction: 24 }}
+                      >
+                        <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
+                          <Button variant="primary" icon="mdi:flash">
+                            {slide.primaryButton}
+                          </Button>
 
-                <Button variant="secondary" icon="mdi:chart-line" onClick={scrollToFeatures}>
-                  Explore Features
-                </Button>
-              </div>
-            </AnimatedContent>
+                          <Button
+                            variant="secondary"
+                            icon="mdi:chart-line"
+                            onClick={index === 2 ? scrollToContact : scrollToFeatures}
+                          >
+                            {slide.secondaryButton}
+                          </Button>
+                        </div>
+                      </AnimatedContent>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 flex items-center gap-3 lg:mt-0 lg:flex-col">
+              {heroSlides.map((slide, index) => (
+                <button
+                  key={slide.title}
+                  type="button"
+                  onClick={() => setActiveSlide(index)}
+                  className={`h-3 rounded-full transition-all duration-300 ${
+                    activeSlide === index ? "w-10 bg-white" : "w-3 bg-white/45 hover:bg-white/70"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -396,6 +477,50 @@ const Home = () => {
       </section>
 
       <Welcome />
+
+      {/* ========================= LIQUIDITY PROVIDERS ========================= */}
+      <section className="relative overflow-hidden border-b border-border/70 py-20">
+        <div className="absolute left-[15%] top-[15%] h-40 w-40 rounded-full bg-accent-1/8 blur-[100px]" />
+        <div className="absolute bottom-[10%] right-[10%] h-48 w-48 rounded-full bg-accent-2/8 blur-[110px]" />
+
+        <AnimatedContent {...sectionAnimation(5)}>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Liquidity Providers</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
+                Connected to leading institutions that support market access
+              </h2>
+              <p className="mt-5 leading-7 text-text/72">
+                Our liquidity network is built to support execution quality, market depth, and a trading experience that
+                feels strong even in fast conditions.
+              </p>
+            </div>
+
+            <div className="relative mt-12 overflow-hidden">
+              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
+
+              <div className="providers-marquee flex w-max gap-5">
+                {repeatedProviders.map((provider, index) => (
+                  <div
+                    key={`${provider.name}-${index}`}
+                    className="group relative flex h-24 w-55 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-border/80 bg-white/58 px-5 shadow-[0_10px_30px_rgba(31,41,55,0.07)] backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/40 hover:bg-white/70 hover:shadow-[0_14px_36px_rgba(126,217,87,0.13)]"
+                  >
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.40))]" />
+                    <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/60 to-transparent" />
+
+                    <img
+                      src={provider.src}
+                      alt={provider.name}
+                      className="relative z-10 max-h-10 w-auto object-contain opacity-95 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimatedContent>
+      </section>
 
       {/* ========================= MISSION / VISION / VALUE ========================= */}
       <section className="relative border-b border-border/70 py-20 lg:py-24">
@@ -679,50 +804,6 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </AnimatedContent>
-      </section>
-
-      {/* ========================= LIQUIDITY PROVIDERS ========================= */}
-      <section className="relative overflow-hidden border-b border-border/70 py-20">
-        <div className="absolute left-[15%] top-[15%] h-40 w-40 rounded-full bg-accent-1/8 blur-[100px]" />
-        <div className="absolute bottom-[10%] right-[10%] h-48 w-48 rounded-full bg-accent-2/8 blur-[110px]" />
-
-        <AnimatedContent {...sectionAnimation(5)}>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm uppercase tracking-[0.24em] text-accent-2/85">Liquidity Providers</p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-                Connected to leading institutions that support market access
-              </h2>
-              <p className="mt-5 leading-7 text-text/72">
-                Our liquidity network is built to support execution quality, market depth, and a trading experience that
-                feels strong even in fast conditions.
-              </p>
-            </div>
-
-            <div className="relative mt-12 overflow-hidden">
-              <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-background to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-background to-transparent" />
-
-              <div className="providers-marquee flex w-max gap-5">
-                {repeatedProviders.map((provider, index) => (
-                  <div
-                    key={`${provider.name}-${index}`}
-                    className="group relative flex h-24 w-55 shrink-0 items-center justify-center overflow-hidden rounded-3xl border border-border/80 bg-white/58 px-5 shadow-[0_10px_30px_rgba(31,41,55,0.07)] backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-accent-1/40 hover:bg-white/70 hover:shadow-[0_14px_36px_rgba(126,217,87,0.13)]"
-                  >
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,255,255,0.40))]" />
-                    <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-accent-1/60 to-transparent" />
-
-                    <img
-                      src={provider.src}
-                      alt={provider.name}
-                      className="relative z-10 max-h-10 w-auto object-contain opacity-95 transition-opacity duration-300 group-hover:opacity-100"
-                    />
-                  </div>
-                ))}
               </div>
             </div>
           </div>
