@@ -402,7 +402,7 @@ const Home = () => {
                 alt={slide.title}
                 className="h-full w-full object-cover object-center md:object-top"
               />
-              <div className="absolute inset-0 bg-black/28 md:bg-black/40" />
+              <div className="absolute inset-0 bg-black/35" />
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.34)_42%,rgba(0,0,0,0.14)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.48)_0%,rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.10)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_24%)]" />
             </div>
