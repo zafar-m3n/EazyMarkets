@@ -60,6 +60,8 @@ const Home = () => {
         "Combine market expertise with powerful platform tools designed to help traders read momentum, manage timing, and act with greater precision.",
       primaryButton: "Open Account",
       secondaryButton: "Explore Features",
+      mobileOverlay: "bg-black/35",
+      desktopOverlay: "md:bg-black/40",
     },
     {
       image: isMobile ? hero2Mobile : hero2,
@@ -69,6 +71,8 @@ const Home = () => {
         "Advanced trading intelligence scans fast-moving markets, detects patterns, and supports smarter decisions with speed, structure, and clarity.",
       primaryButton: "Get Started",
       secondaryButton: "See How It Works",
+      mobileOverlay: "bg-black/45",
+      desktopOverlay: "md:bg-black/50",
     },
     {
       image: isMobile ? hero3Mobile : hero3,
@@ -78,6 +82,8 @@ const Home = () => {
         "Trade in a professional environment with live data, intelligent execution support, and risk-aware tools built for serious market participation.",
       primaryButton: "Start Trading",
       secondaryButton: "Contact Us",
+      mobileOverlay: "bg-black/45",
+      desktopOverlay: "md:bg-black/50",
     },
   ];
 
@@ -363,23 +369,6 @@ const Home = () => {
   return (
     <div ref={scrollContainerRef} className="min-h-screen overflow-x-hidden bg-background font-figtree text-text">
       <AnniversaryOfferPopup />
-      {/* <style>
-        {`
-          @keyframes providersMarquee {
-            from {
-              transform: translateX(0%);
-            }
-            to {
-              transform: translateX(-50%);
-            }
-          }
-            
-          .providers-marquee {
-            animation: providersMarquee 116s linear infinite;
-            will-change: transform;
-          }
-        `}
-      </style> */}
 
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -left-32 top-32 h-64 w-64 rounded-full bg-accent-1/10 blur-[120px]" />
@@ -402,7 +391,9 @@ const Home = () => {
                 alt={slide.title}
                 className="h-full w-full object-cover object-center md:object-top"
               />
-              <div className="absolute inset-0 bg-black/35" />
+
+              <div className={`absolute inset-0 ${slide.mobileOverlay} ${slide.desktopOverlay}`} />
+
               <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.34)_42%,rgba(0,0,0,0.14)_100%)] md:bg-[linear-gradient(90deg,rgba(0,0,0,0.48)_0%,rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.10)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_24%)]" />
             </div>
