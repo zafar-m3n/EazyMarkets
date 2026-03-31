@@ -460,14 +460,26 @@ const Home = () => {
                         config={{ tension: 52, friction: 24 }}
                       >
                         <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row">
-                          <Button variant="primary" icon="mdi:flash">
+                          <Button
+                            variant="primary"
+                            icon="mdi:flash"
+                            onClick={() => {
+                              window.open("https://portal.eazymarkets.com/signup", "_blank");
+                            }}
+                          >
                             {slide.primaryButton}
                           </Button>
 
                           <Button
                             variant="secondary"
                             icon="mdi:chart-line"
-                            onClick={index === 2 ? scrollToContact : scrollToFeatures}
+                            onClick={() => {
+                              if (index === 2) {
+                                window.location.href = "/contact";
+                              } else {
+                                scrollToFeatures();
+                              }
+                            }}
                           >
                             {slide.secondaryButton}
                           </Button>
@@ -839,10 +851,22 @@ const Home = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button variant="primary" icon="mdi:rocket-launch">
+                    <Button
+                      variant="primary"
+                      icon="mdi:rocket-launch"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started Now
                     </Button>
-                    <Button variant="secondary" icon="mdi:message-text-outline" onClick={scrollToContact}>
+                    <Button
+                      variant="secondary"
+                      icon="mdi:message-text-outline"
+                      onClick={() => {
+                        window.location.href = "/contact";
+                      }}
+                    >
                       Contact Us
                     </Button>
                   </div>

@@ -8,6 +8,7 @@ import logoDark from "@/assets/logoDark.png";
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHeroMode, setIsHeroMode] = useState(false);
+  const [isFooterMode, setIsFooterMode] = useState(false);
   const location = useLocation();
 
   const navLinks = [
@@ -27,16 +28,33 @@ function Navbar() {
     const handleScroll = () => {
       if (!isHomePage) {
         setIsHeroMode(false);
+      } else {
+        setIsHeroMode(window.scrollY < 300);
+      }
+
+      const footer = document.querySelector("footer");
+
+      if (!footer) {
+        setIsFooterMode(false);
         return;
       }
 
-      setIsHeroMode(window.scrollY < 300);
+      const footerRect = footer.getBoundingClientRect();
+      const navbarTopOffset = 16;
+      const navbarApproxHeight = 72;
+      const navbarBottom = navbarTopOffset + navbarApproxHeight;
+
+      setIsFooterMode(footerRect.top <= navbarBottom);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [isHomePage]);
 
   useEffect(() => {
@@ -47,13 +65,14 @@ function Navbar() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const usingLightNavbar = isHomePage && isHeroMode;
-  const currentLogo = mobileMenuOpen ? logoDark : usingLightNavbar ? logoDark : logo;
-  const navTextClass = usingLightNavbar ? "text-white" : "text-text";
-  const navMutedTextClass = usingLightNavbar ? "text-white/75 hover:text-white" : "text-text/70 hover:text-text";
-  const navBorderClass = usingLightNavbar ? "border-white/14" : "border-white/10";
-  const navBgClass = usingLightNavbar ? "bg-white/8" : "bg-white/6";
-  const navShadowClass = usingLightNavbar
+  const useInvertedNavbar = mobileMenuOpen || (isHomePage && isHeroMode) || isFooterMode;
+
+  const currentLogo = useInvertedNavbar ? logoDark : logo;
+  const navTextClass = useInvertedNavbar ? "text-white" : "text-text";
+  const navMutedTextClass = useInvertedNavbar ? "text-white/75 hover:text-white" : "text-text/70 hover:text-text";
+  const navBorderClass = useInvertedNavbar ? "border-white/14" : "border-white/10";
+  const navBgClass = useInvertedNavbar ? "bg-white/8" : "bg-white/6";
+  const navShadowClass = useInvertedNavbar
     ? "shadow-[0_10px_40px_rgba(0,0,0,0.45),0_0_30px_rgba(255,255,255,0.08)]"
     : "shadow-[0_10px_40px_rgba(0,0,0,0.45),0_0_30px_rgba(250,204,21,0.22)]";
 
@@ -96,11 +115,23 @@ function Navbar() {
             </div>
 
             <div className="hidden items-center gap-3 lg:flex">
-              <Button variant="secondary" onClick={scrollToTop} className="text-sm">
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  window.open("https://portal.eazymarkets.com/login", "_blank");
+                }}
+                className="text-sm"
+              >
                 Login
               </Button>
 
-              <Button variant="primary" className="text-sm">
+              <Button
+                variant="primary"
+                onClick={() => {
+                  window.open("https://portal.eazymarkets.com/signup", "_blank");
+                }}
+                className="text-sm"
+              >
                 Open Account
               </Button>
             </div>
@@ -108,7 +139,7 @@ function Navbar() {
             <button
               onClick={() => setMobileMenuOpen((prev) => !prev)}
               className={`rounded-full border p-2 backdrop-blur-xl transition lg:hidden ${
-                usingLightNavbar
+                useInvertedNavbar
                   ? "border-white/20 bg-white/10 text-white hover:bg-white/16"
                   : "border-white/12 bg-white/6 text-text hover:bg-white/10"
               } shadow-[0_0_18px_rgba(250,204,21,0.14)]`}
@@ -157,7 +188,7 @@ function Navbar() {
               variant="secondary"
               onClick={() => {
                 setMobileMenuOpen(false);
-                scrollToTop();
+                window.open("https://portal.eazymarkets.com/login", "_blank");
               }}
               className="w-full justify-center text-sm"
             >
@@ -166,7 +197,10 @@ function Navbar() {
 
             <Button
               variant="primary"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.open("https://portal.eazymarkets.com/signup", "_blank");
+              }}
               className="w-full justify-center text-sm"
             >
               Open Account

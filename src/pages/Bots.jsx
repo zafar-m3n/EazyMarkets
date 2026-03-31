@@ -281,7 +281,7 @@ const AccountPlanCard = ({ account }) => {
       <div className="relative z-10 mt-auto flex justify-center pt-6">
         <button
           className="rounded-lg border border-accent-1/20 bg-white/72 px-4 py-2 text-center text-sm text-text backdrop-blur-lg transition-all duration-300 hover:border-accent-1/55 hover:bg-accent-1/12 hover:shadow-[0_0_18px_rgba(126,217,87,0.22)] md:text-base"
-          onClick={() => window.open("/contact", "_blank")}
+          onClick={() => window.open("https://portal.eazymarkets.com/signup", "_blank")}
         >
           Trade Now
         </button>
@@ -498,7 +498,13 @@ const Bots = () => {
                       Explore Bots
                     </Button>
 
-                    <Button variant="secondary" icon="mdi:rocket-launch-outline" onClick={scrollToCta}>
+                    <Button
+                      variant="secondary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started
                     </Button>
                   </div>
@@ -755,8 +761,14 @@ const Bots = () => {
                     <Button variant="primary" icon="mdi:robot-outline" onClick={scrollToBots}>
                       Explore Bots
                     </Button>
-                    <Button variant="secondary" icon="mdi:rocket-launch-outline" onClick={scrollToCta}>
-                      Open Account
+                    <Button
+                      variant="secondary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
+                      Open Bot Trading Account
                     </Button>
                   </div>
                 </div>

@@ -175,7 +175,7 @@ const AccountPlanCard = ({ account }) => {
       <div className="relative z-10 mt-auto flex justify-center pt-6">
         <button
           className="rounded-lg border border-accent-1/20 bg-white/72 px-4 py-2 text-center text-sm text-text backdrop-blur-lg transition-all duration-300 hover:border-accent-1/55 hover:bg-accent-1/12 hover:shadow-[0_0_18px_rgba(126,217,87,0.22)] md:text-base"
-          onClick={() => window.open("/contact", "_blank")}
+          onClick={() => window.open("https://portal.eazymarkets.com/signup", "_blank")}
         >
           Open This Account
         </button>
@@ -356,10 +356,21 @@ const DesktopAccountTabs = ({ plans, activeIndex, setActiveIndex }) => {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button variant="primary" icon="mdi:wallet-outline" onClick={() => window.open("/contact", "_blank")}>
+              <Button
+                variant="primary"
+                icon="mdi:wallet-outline"
+                onClick={() => window.open("https://portal.eazymarkets.com/signup", "_blank")}
+              >
                 Open Account
               </Button>
-              <Button variant="secondary" icon="mdi:chart-line" onClick={() => window.open("/contact", "_blank")}>
+
+              <Button
+                variant="secondary"
+                icon="mdi:chart-line"
+                onClick={() => {
+                  window.location.href = "/contact";
+                }}
+              >
                 Talk to Advisor
               </Button>
             </div>
@@ -497,7 +508,13 @@ const Accounts = () => {
                       Explore Accounts
                     </Button>
 
-                    <Button variant="secondary" icon="mdi:rocket-launch-outline" onClick={scrollToCta}>
+                    <Button
+                      variant="secondary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Open Account
                     </Button>
                   </div>
@@ -697,12 +714,21 @@ const Accounts = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button variant="primary" icon="mdi:rocket-launch">
-                      Get Started Now
-                    </Button>
-                    <Button variant="secondary" icon="mdi:chart-line">
-                      Compare Plans
-                    </Button>
+                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                      <Button
+                        variant="primary"
+                        icon="mdi:rocket-launch-outline"
+                        onClick={() => {
+                          window.open("https://portal.eazymarkets.com/signup", "_blank");
+                        }}
+                      >
+                        Get Started
+                      </Button>
+
+                      <Button variant="secondary" icon="mdi:chart-line" onClick={scrollToPlans}>
+                        Compare Plans
+                      </Button>
+                    </div>
                   </div>
                 </div>
 

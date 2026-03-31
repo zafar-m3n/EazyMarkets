@@ -181,7 +181,13 @@ const Education = () => {
                       Learn More
                     </Button>
 
-                    <Button variant="secondary" icon="mdi:rocket-launch-outline" onClick={scrollToCta}>
+                    <Button
+                      variant="secondary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started
                     </Button>
                   </div>
@@ -548,10 +554,23 @@ const Education = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button variant="primary" icon="mdi:rocket-launch-outline">
+                    <Button
+                      variant="primary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started
                     </Button>
-                    <Button variant="secondary" icon="mdi:book-open-page-variant-outline">
+
+                    <Button
+                      variant="secondary"
+                      icon="mdi:book-open-page-variant-outline"
+                      onClick={() => {
+                        window.location.href = "/education";
+                      }}
+                    >
                       Learn More
                     </Button>
                   </div>

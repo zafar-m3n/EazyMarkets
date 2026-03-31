@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
 import Promotions from "./pages/Promotions";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="legal" element={<Legal />} />
           <Route path="privacy" element={<Privacy />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

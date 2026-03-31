@@ -201,7 +201,13 @@ const About = () => {
                       Learn About Us
                     </Button>
 
-                    <Button variant="secondary" icon="mdi:rocket-launch-outline" onClick={scrollToCta}>
+                    <Button
+                      variant="secondary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started
                     </Button>
                   </div>
@@ -391,10 +397,23 @@ const About = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button variant="primary" icon="mdi:rocket-launch-outline">
+                    <Button
+                      variant="primary"
+                      icon="mdi:rocket-launch-outline"
+                      onClick={() => {
+                        window.open("https://portal.eazymarkets.com/signup", "_blank");
+                      }}
+                    >
                       Get Started
                     </Button>
-                    <Button variant="secondary" icon="mdi:chart-line">
+
+                    <Button
+                      variant="secondary"
+                      icon="mdi:chart-line"
+                      onClick={() => {
+                        window.location.href = "/education";
+                      }}
+                    >
                       Learn More
                     </Button>
                   </div>

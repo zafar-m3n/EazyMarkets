@@ -276,14 +276,18 @@ const Promotions = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button variant="primary" icon="mdi:gift-outline" onClick={() => window.open("/contact", "_blank")}>
+                    <Button
+                      variant="primary"
+                      icon="mdi:gift-outline"
+                      onClick={() => window.open("https://portal.eazymarkets.com/login", "_blank")}
+                    >
                       Claim Promotion
                     </Button>
 
                     <Button
                       variant="secondary"
                       icon="mdi:account-plus-outline"
-                      onClick={() => window.open("/accounts", "_blank")}
+                      onClick={() => (window.location.href = "/accounts")}
                     >
                       View Accounts
                     </Button>

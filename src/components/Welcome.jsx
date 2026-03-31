@@ -96,16 +96,24 @@ const Welcome = () => {
           </h2>
 
           <p className="text-sm text-justify md:text-base">
-            Venture into a realm of endless financial potential with EazyMarkets. Crafted for both newcomers and seasoned
-            traders, our platform offers an unmatched trading journey. Dive into a variety of markets, from stocks to
-            crypto, with cutting-edge tools and live analytics designed to guide you toward success.
+            Venture into a realm of endless financial potential with EazyMarkets. Crafted for both newcomers and
+            seasoned traders, our platform offers an unmatched trading journey. Dive into a variety of markets, from
+            stocks to crypto, with cutting-edge tools and live analytics designed to guide you toward success.
           </p>
 
           <p className="text-sm text-justify md:text-base">
             At EazyMarkets, we don’t just connect traders; We empower them to conquer the globe.
           </p>
 
-          <Button variant="secondary">Get Started</Button>
+          <Button
+            variant="secondary"
+            icon="mdi:flash"
+            onClick={() => {
+              window.open("https://portal.eazymarkets.com/signup", "_blank");
+            }}
+          >
+            Get Started
+          </Button>
         </div>
 
         <div className="relative mt-10 flex w-full justify-center lg:mt-0 lg:w-1/2 lg:justify-end">
