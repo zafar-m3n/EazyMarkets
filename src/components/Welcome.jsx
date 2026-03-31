@@ -4,8 +4,8 @@ import { Icon } from "@iconify/react";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
 
-import xauusd from "@/assets/xauusd.png";
-import wti from "@/assets/wti.png";
+import xauusd from "@/assets/xauusd.webp";
+import wti from "@/assets/wti.webp";
 import tsla from "@/assets/tsla.webp";
 import meta from "@/assets/meta.webp";
 import btc from "@/assets/btc.webp";

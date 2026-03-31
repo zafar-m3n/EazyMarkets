@@ -5,11 +5,11 @@ import CountUp from "react-countup";
 import Button from "@/components/ui/Button";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import { LampContainer } from "@/components/ui/Lamp";
-import educationHero from "@/assets/educationHero.jpg";
-import education1 from "@/assets/education1.jpg";
-import education2 from "@/assets/education2.jpg";
-import education3 from "@/assets/education3.jpg";
-import homeCTA from "@/assets/homeCTA.jpg";
+import educationHero from "@/assets/educationHero.webp";
+import education1 from "@/assets/education1.webp";
+import education2 from "@/assets/education2.webp";
+import education3 from "@/assets/education3.webp";
+import homeCTA from "@/assets/homeCTA.webp";
 
 const comparisonRows = [
   {

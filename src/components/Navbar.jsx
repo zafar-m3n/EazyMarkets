@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import Button from "@/components/ui/Button";
-import logo from "@/assets/logo.png";
-import logoDark from "@/assets/logoDark.png";
+import logo from "@/assets/logo.webp";
+import logoDark from "@/assets/logoDark.webp";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

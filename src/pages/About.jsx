@@ -4,8 +4,8 @@ import { Icon } from "@iconify/react";
 import Button from "@/components/ui/Button";
 import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import AnimatedContent from "@/components/ui/AnimatedContent";
-import homeCTA from "@/assets/homeCTA.jpg";
-import aboutHero from "@/assets/aboutHero.jpg";
+import homeCTA from "@/assets/homeCTA.webp";
+import aboutHero from "@/assets/aboutHero.webp";
 
 const tickerTexts = [
   "AI AUTOMATION • SMART EXECUTION • DATA-DRIVEN TRADING • REAL-TIME ANALYSIS • DISCIPLINED STRATEGY •",

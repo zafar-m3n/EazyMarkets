@@ -3,11 +3,11 @@ import { Icon } from "@iconify/react";
 
 import Button from "@/components/ui/Button";
 import AnimatedContent from "@/components/ui/AnimatedContent";
-import homeCTA from "@/assets/homeCTA.jpg";
-import promotions1 from "@/assets/promotions1.png";
-import promotions2 from "@/assets/promotions2.png";
-import promotions3 from "@/assets/promotions3.png";
-import promotions4 from "@/assets/promotions4.png";
+import homeCTA from "@/assets/homeCTA.webp";
+import promotions1 from "@/assets/promotions1.webp";
+import promotions2 from "@/assets/promotions2.webp";
+import promotions3 from "@/assets/promotions3.webp";
+import promotions4 from "@/assets/promotions4.webp";
 
 const Promotions = () => {
   useEffect(() => {

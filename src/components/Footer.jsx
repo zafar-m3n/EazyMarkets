@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import logoDark from "@/assets/logoDark.png";
+import logoDark from "@/assets/logoDark.webp";
 
 function Footer() {
   const year = new Date().getFullYear();

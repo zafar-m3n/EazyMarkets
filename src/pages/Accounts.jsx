@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import accountsHero from "@/assets/accountsHero.jpg";
+import accountsHero from "@/assets/accountsHero.webp";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
 import useWdith from "@/hooks/useWidth";
-import homeCTA from "@/assets/homeCTA.jpg";
+import homeCTA from "@/assets/homeCTA.webp";
 
 const accountPlans = [
   {

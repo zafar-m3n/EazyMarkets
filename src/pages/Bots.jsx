@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import { Icon } from "@iconify/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import botsHero from "@/assets/botsHero.jpg";
+import botsHero from "@/assets/botsHero.webp";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
-import homeCTA from "@/assets/homeCTA.jpg";
+import homeCTA from "@/assets/homeCTA.webp";
 import useWdith from "@/hooks/useWidth";
 
 const bots = [
