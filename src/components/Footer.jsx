@@ -32,7 +32,7 @@ function Footer() {
 
             <div className="flex items-center gap-3">
               {/* Social icons */}
-              {["mdi:twitter", "mdi:linkedin", "mdi:instagram"].map((icon, i) => (
+              {["prime:twitter", "mdi:linkedin", "mdi:instagram"].map((icon, i) => (
                 <a
                   key={i}
                   href="#"

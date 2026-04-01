@@ -21,7 +21,7 @@ const Promotions = () => {
       subheading:
         "Supercharge your trading journey—double your investment instantly and unlock endless profit potential!",
       text: [
-        "Ready to transform your trading game? With Zipphy Trading’s exclusive offer, unlock a thrilling 100% bonus on your first deposit! Dive in, double your power, and watch your trades soar.",
+        "Ready to transform your trading game? With EazyMarkets Trading’s exclusive offer, unlock a thrilling 100% bonus on your first deposit! Dive in, double your power, and watch your trades soar.",
         "Unleash your trading potential with Double Deposit! It’s more than a boost—it’s your gateway to bigger trades, bolder strategies, and boundless opportunities.",
         "Join us today and double your potential from the very first trade!",
       ],
@@ -66,7 +66,7 @@ const Promotions = () => {
       title: "PREPAID MASTERCARD",
       subheading: "Unlock endless benefits with our all-in-one Prepaid MasterCard—empower your wallet!",
       text: [
-        "Introducing the exclusive Zipphy Prepaid MasterCard®—crafted for premium account holders who want more convenience and flexibility.",
+        "Introducing the exclusive EazyMarkets Prepaid MasterCard®—crafted for premium account holders who want more convenience and flexibility.",
         "Whether at home or abroad, enjoy seamless access to your funds with a benefit designed to fit your trading lifestyle.",
         "Say goodbye to limits and hello to exclusive perks that elevate your experience.",
       ],
