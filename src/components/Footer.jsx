@@ -31,7 +31,7 @@ function Footer() {
             </p>
 
             <div className="flex items-center gap-3">
-              {/* Social icons */}
+              {/*
               {["prime:twitter", "mdi:linkedin", "mdi:instagram"].map((icon, i) => (
                 <a
                   key={i}
@@ -41,6 +41,7 @@ function Footer() {
                   <Icon icon={icon} className="w-5 h-5 text-accent-1" />
                 </a>
               ))}
+              */}
             </div>
           </div>
 
@@ -109,8 +110,13 @@ function Footer() {
           </div>
         </div>
 
+        <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
+          <Icon icon="mdi:map-marker-outline" className="w-5 h-5 text-accent-1 shrink-0" />
+          <p>640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
+        </div>
+
         {/* Divider */}
-        <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-10" />
+        <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
 
         {/* Risk text (UNCHANGED content) */}
         <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-white/70">
