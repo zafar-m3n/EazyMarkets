@@ -4,6 +4,10 @@ import Home from "./pages/Home";
 import Accounts from "./pages/Accounts";
 import Bots from "./pages/Bots";
 import Education from "./pages/Education";
+import EconomicCalendar from "./pages/EconomicCalendar";
+import ForexBasics from "./pages/ForexBasics";
+import FundamentalAnalysis from "./pages/FundamentalAnalysis";
+import TechnicalAnalysis from "./pages/TechnicalAnalysis";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
@@ -20,7 +24,11 @@ function App() {
           <Route path="accounts" element={<Accounts />} />
           <Route path="bots" element={<Bots />} />
           <Route path="promotions" element={<Promotions />} />
-          <Route path="education" element={<Education />} />
+          <Route path="education/forex-basics" element={<ForexBasics />} />
+          <Route path="education/ai-trading" element={<Education />} />
+          <Route path="education/economic-calendar" element={<EconomicCalendar />} />
+          <Route path="education/fundamental-analysis" element={<FundamentalAnalysis />} />
+          <Route path="education/technical-analysis" element={<TechnicalAnalysis />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="legal" element={<Legal />} />

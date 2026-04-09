@@ -7,6 +7,8 @@ import logoDark from "@/assets/logoDark.webp";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileEducationOpen, setMobileEducationOpen] = useState(false);
+  const [desktopEducationOpen, setDesktopEducationOpen] = useState(false);
   const [isHeroMode, setIsHeroMode] = useState(false);
   const [isFooterMode, setIsFooterMode] = useState(false);
   const location = useLocation();
@@ -16,13 +18,27 @@ function Navbar() {
     { name: "Accounts", path: "/accounts" },
     { name: "Bots", path: "/bots" },
     { name: "Promotions", path: "/promotions" },
-    { name: "Education", path: "/education" },
+    {
+      name: "Education",
+      path: "/education",
+      children: [
+        { name: "Forex Basics", path: "/education/forex-basics" },
+        { name: "AI Trading", path: "/education/ai-trading" },
+        { name: "Economic Calendar", path: "/education/economic-calendar" },
+        { name: "Fundamental Analysis", path: "/education/fundamental-analysis" },
+        { name: "Technical Analysis", path: "/education/technical-analysis" },
+      ],
+    },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
 
   const isHomePage = location.pathname === "/";
-  const isActive = (path) => location.pathname === path;
+
+  const isActive = (path, children = []) => {
+    if (location.pathname === path) return true;
+    return children.some((child) => location.pathname === child.path);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +75,15 @@ function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setMobileEducationOpen(false);
+    setDesktopEducationOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) {
+      setMobileEducationOpen(false);
+    }
+  }, [mobileMenuOpen]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -94,24 +118,90 @@ function Navbar() {
             </Link>
 
             <div className="hidden items-center gap-6 lg:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={scrollToTop}
-                  className={`group relative text-base font-medium transition-colors duration-200 ${
-                    isActive(link.path) ? navTextClass : navMutedTextClass
-                  }`}
-                >
-                  {link.name}
+              {navLinks.map((link) => {
+                if (link.children) {
+                  const parentActive = isActive(link.path, link.children);
 
-                  <span
-                    className={`absolute left-0 -bottom-1 h-0.5 w-full rounded-full bg-linear-to-r from-accent-1 to-accent-2 transition-all duration-200 ${
-                      isActive(link.path) ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  return (
+                    <div
+                      key={link.path}
+                      className="relative"
+                      onMouseEnter={() => setDesktopEducationOpen(true)}
+                      onMouseLeave={() => setDesktopEducationOpen(false)}
+                    >
+                      <button
+                        type="button"
+                        className={`group relative flex items-center gap-1 text-base font-medium transition-colors duration-200 ${
+                          parentActive ? navTextClass : navMutedTextClass
+                        }`}
+                      >
+                        <span>{link.name}</span>
+                        <Icon
+                          icon="mdi:chevron-down"
+                          className={`h-4 w-4 transition-transform duration-200 ${
+                            desktopEducationOpen ? "rotate-180" : ""
+                          }`}
+                        />
+
+                        <span
+                          className={`absolute left-0 -bottom-1 h-0.5 w-full rounded-full bg-linear-to-r from-accent-1 to-accent-2 transition-all duration-200 ${
+                            parentActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                          }`}
+                        />
+                      </button>
+
+                      <div
+                        className={`absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 rounded-2xl border border-black/8 bg-white/95 p-2 text-text backdrop-blur-2xl shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition-all duration-200 ${
+                          desktopEducationOpen
+                            ? "visible translate-y-0 opacity-100"
+                            : "invisible -translate-y-2 opacity-0"
+                        }`}
+                      >
+                        <div className="flex flex-col gap-1">
+                          {link.children.map((child) => {
+                            const childActive = location.pathname === child.path;
+
+                            return (
+                              <Link
+                                key={child.path}
+                                to={child.path}
+                                onClick={() => {
+                                  setDesktopEducationOpen(false);
+                                  scrollToTop();
+                                }}
+                                className={`rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
+                                  childActive ? "bg-black/6 text-text" : "text-text/75 hover:bg-black/4 hover:text-text"
+                                }`}
+                              >
+                                {child.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={scrollToTop}
+                    className={`group relative text-base font-medium transition-colors duration-200 ${
+                      isActive(link.path) ? navTextClass : navMutedTextClass
                     }`}
-                  />
-                </Link>
-              ))}
+                  >
+                    {link.name}
+
+                    <span
+                      className={`absolute left-0 -bottom-1 h-0.5 w-full rounded-full bg-linear-to-r from-accent-1 to-accent-2 transition-all duration-200 ${
+                        isActive(link.path) ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden items-center gap-3 lg:flex">
@@ -164,23 +254,87 @@ function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  scrollToTop();
-                }}
-                className={`rounded-xl border px-4 py-2.5 text-base font-medium transition-all duration-200 ${
-                  isActive(link.path)
-                    ? "border-white/18 bg-linear-to-r from-white/12 to-white/6 text-white"
-                    : "border-transparent text-white/78 hover:border-white/12 hover:bg-white/8 hover:text-white"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.children) {
+                const parentActive = isActive(link.path, link.children);
+
+                return (
+                  <div
+                    key={link.path}
+                    className={`rounded-2xl border transition-all duration-200 ${
+                      parentActive
+                        ? "border-white/18 bg-linear-to-r from-white/12 to-white/6"
+                        : "border-transparent bg-transparent"
+                    }`}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setMobileEducationOpen((prev) => !prev)}
+                      className={`flex w-full items-center justify-between rounded-2xl px-4 py-2.5 text-left text-base font-medium transition-all duration-200 ${
+                        parentActive ? "text-white" : "text-white/78 hover:bg-white/8 hover:text-white"
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <Icon
+                        icon="mdi:chevron-down"
+                        className={`h-5 w-5 transition-transform duration-200 ${
+                          mobileEducationOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        mobileEducationOpen ? "max-h-96 opacity-100 pb-2" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="flex flex-col gap-1 px-2">
+                        {link.children.map((child) => {
+                          const childActive = location.pathname === child.path;
+
+                          return (
+                            <Link
+                              key={child.path}
+                              to={child.path}
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setMobileEducationOpen(false);
+                                scrollToTop();
+                              }}
+                              className={`rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
+                                childActive
+                                  ? "bg-white/12 text-white"
+                                  : "text-white/72 hover:bg-white/8 hover:text-white"
+                              }`}
+                            >
+                              {child.name}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    scrollToTop();
+                  }}
+                  className={`rounded-xl border px-4 py-2.5 text-base font-medium transition-all duration-200 ${
+                    isActive(link.path)
+                      ? "border-white/18 bg-linear-to-r from-white/12 to-white/6 text-white"
+                      : "border-transparent text-white/78 hover:border-white/12 hover:bg-white/8 hover:text-white"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
 
             <div className="my-2 h-px bg-white/10" />
 
