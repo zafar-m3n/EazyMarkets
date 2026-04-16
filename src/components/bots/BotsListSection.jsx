@@ -135,19 +135,11 @@ const BotsListSection = () => {
         <div className="absolute -right-20 top-[35%] h-40 w-40 rounded-full bg-accent-1/14 blur-3xl md:h-80 md:w-80" />
       </div>
 
-      <AnimatedContent
-        direction="horizontal"
-        reverse={false}
-        distance={100}
-        threshold={0.1}
-        config={{ tension: 50, friction: 25 }}
-      >
-        <div className="relative z-10 mx-auto max-w-7xl space-y-6 px-4 sm:px-6 lg:px-8">
-          {bots.map((bot, index) => (
-            <BotCard key={bot.name} bot={bot} index={index} />
-          ))}
-        </div>
-      </AnimatedContent>
+      <div className="relative z-10 mx-auto max-w-7xl space-y-6 px-4 sm:px-6 lg:px-8">
+        {bots.map((bot, index) => (
+          <BotCard key={bot.name} bot={bot} index={index} />
+        ))}
+      </div>
     </section>
   );
 };

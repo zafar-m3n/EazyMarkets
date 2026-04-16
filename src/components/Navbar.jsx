@@ -7,14 +7,25 @@ import logoDark from "@/assets/logoDark.webp";
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileEducationOpen, setMobileEducationOpen] = useState(false);
-  const [desktopEducationOpen, setDesktopEducationOpen] = useState(false);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null);
+  const [desktopOpenDropdown, setDesktopOpenDropdown] = useState(null);
   const [isHeroMode, setIsHeroMode] = useState(false);
   const [isFooterMode, setIsFooterMode] = useState(false);
   const location = useLocation();
 
   const navLinks = [
     { name: "Home", path: "/" },
+    {
+      name: "Markets",
+      path: "/markets",
+      children: [
+        { name: "Forex", path: "/markets/forex" },
+        { name: "Commodities", path: "/markets/commodities" },
+        { name: "Indices", path: "/markets/indices" },
+        { name: "Stocks", path: "/markets/stocks" },
+        { name: "Cryptocurrency", path: "/markets/crypto" },
+      ],
+    },
     { name: "Accounts", path: "/accounts" },
     { name: "Bots", path: "/bots" },
     { name: "Promotions", path: "/promotions" },
@@ -29,8 +40,15 @@ function Navbar() {
         { name: "Technical Analysis", path: "/education/technical-analysis" },
       ],
     },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    {
+      name: "Company",
+      path: "/company",
+      children: [
+        { name: "About", path: "/about" },
+        { name: "Contact", path: "/contact" },
+        { name: "Legal", path: "/legal" },
+      ],
+    },
   ];
 
   const isHomePage = location.pathname === "/";
@@ -75,13 +93,13 @@ function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
-    setMobileEducationOpen(false);
-    setDesktopEducationOpen(false);
+    setMobileOpenDropdown(null);
+    setDesktopOpenDropdown(null);
   }, [location.pathname]);
 
   useEffect(() => {
     if (!mobileMenuOpen) {
-      setMobileEducationOpen(false);
+      setMobileOpenDropdown(null);
     }
   }, [mobileMenuOpen]);
 
@@ -121,13 +139,14 @@ function Navbar() {
               {navLinks.map((link) => {
                 if (link.children) {
                   const parentActive = isActive(link.path, link.children);
+                  const isDropdownOpen = desktopOpenDropdown === link.path;
 
                   return (
                     <div
                       key={link.path}
                       className="relative"
-                      onMouseEnter={() => setDesktopEducationOpen(true)}
-                      onMouseLeave={() => setDesktopEducationOpen(false)}
+                      onMouseEnter={() => setDesktopOpenDropdown(link.path)}
+                      onMouseLeave={() => setDesktopOpenDropdown(null)}
                     >
                       <button
                         type="button"
@@ -138,23 +157,19 @@ function Navbar() {
                         <span>{link.name}</span>
                         <Icon
                           icon="mdi:chevron-down"
-                          className={`h-4 w-4 transition-transform duration-200 ${
-                            desktopEducationOpen ? "rotate-180" : ""
-                          }`}
+                          className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
                         />
 
                         <span
                           className={`absolute left-0 -bottom-1 h-0.5 w-full rounded-full bg-linear-to-r from-accent-1 to-accent-2 transition-all duration-200 ${
-                            parentActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                            parentActive || isDropdownOpen ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                           }`}
                         />
                       </button>
 
                       <div
                         className={`absolute left-1/2 top-full mt-4 w-72 -translate-x-1/2 rounded-2xl border border-black/8 bg-white/95 p-2 text-text backdrop-blur-2xl shadow-[0_18px_50px_rgba(0,0,0,0.18)] transition-all duration-200 ${
-                          desktopEducationOpen
-                            ? "visible translate-y-0 opacity-100"
-                            : "invisible -translate-y-2 opacity-0"
+                          isDropdownOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-2 opacity-0"
                         }`}
                       >
                         <div className="flex flex-col gap-1">
@@ -166,7 +181,7 @@ function Navbar() {
                                 key={child.path}
                                 to={child.path}
                                 onClick={() => {
-                                  setDesktopEducationOpen(false);
+                                  setDesktopOpenDropdown(null);
                                   scrollToTop();
                                 }}
                                 className={`rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${
@@ -257,19 +272,20 @@ function Navbar() {
             {navLinks.map((link) => {
               if (link.children) {
                 const parentActive = isActive(link.path, link.children);
+                const isDropdownOpen = mobileOpenDropdown === link.path;
 
                 return (
                   <div
                     key={link.path}
                     className={`rounded-2xl border transition-all duration-200 ${
-                      parentActive
+                      parentActive || isDropdownOpen
                         ? "border-white/18 bg-linear-to-r from-white/12 to-white/6"
                         : "border-transparent bg-transparent"
                     }`}
                   >
                     <button
                       type="button"
-                      onClick={() => setMobileEducationOpen((prev) => !prev)}
+                      onClick={() => setMobileOpenDropdown((prev) => (prev === link.path ? null : link.path))}
                       className={`flex w-full items-center justify-between rounded-2xl px-4 py-2.5 text-left text-base font-medium transition-all duration-200 ${
                         parentActive ? "text-white" : "text-white/78 hover:bg-white/8 hover:text-white"
                       }`}
@@ -277,15 +293,13 @@ function Navbar() {
                       <span>{link.name}</span>
                       <Icon
                         icon="mdi:chevron-down"
-                        className={`h-5 w-5 transition-transform duration-200 ${
-                          mobileEducationOpen ? "rotate-180" : ""
-                        }`}
+                        className={`h-5 w-5 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""}`}
                       />
                     </button>
 
                     <div
                       className={`overflow-hidden transition-all duration-300 ${
-                        mobileEducationOpen ? "max-h-96 opacity-100 pb-2" : "max-h-0 opacity-0"
+                        isDropdownOpen ? "max-h-96 opacity-100 pb-2" : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="flex flex-col gap-1 px-2">
@@ -298,7 +312,7 @@ function Navbar() {
                               to={child.path}
                               onClick={() => {
                                 setMobileMenuOpen(false);
-                                setMobileEducationOpen(false);
+                                setMobileOpenDropdown(null);
                                 scrollToTop();
                               }}
                               className={`rounded-xl px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
@@ -323,6 +337,7 @@ function Navbar() {
                   to={link.path}
                   onClick={() => {
                     setMobileMenuOpen(false);
+                    setMobileOpenDropdown(null);
                     scrollToTop();
                   }}
                   className={`rounded-xl border px-4 py-2.5 text-base font-medium transition-all duration-200 ${
@@ -342,6 +357,7 @@ function Navbar() {
               variant="secondary"
               onClick={() => {
                 setMobileMenuOpen(false);
+                setMobileOpenDropdown(null);
                 window.open("https://portal.eazymarkets.com/login", "_blank");
               }}
               className="w-full justify-center text-sm"
@@ -353,6 +369,7 @@ function Navbar() {
               variant="primary"
               onClick={() => {
                 setMobileMenuOpen(false);
+                setMobileOpenDropdown(null);
                 window.open("https://portal.eazymarkets.com/signup", "_blank");
               }}
               className="w-full justify-center text-sm"

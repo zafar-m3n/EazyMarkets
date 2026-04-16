@@ -13,6 +13,11 @@ import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import Privacy from "./pages/Privacy";
 import Promotions from "./pages/Promotions";
+import Crypto from "./pages/markets/Crypto";
+import Forex from "./pages/markets/Forex";
+import Indices from "./pages/markets/Indices";
+import Stocks from "./pages/markets/Stocks";
+import Commodities from "./pages/markets/Commodities";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -21,6 +26,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="markets/crypto" element={<Crypto />} />
+          <Route path="markets/forex" element={<Forex />} />
+          <Route path="markets/indices" element={<Indices />} />
+          <Route path="markets/stocks" element={<Stocks />} />
+          <Route path="markets/commodities" element={<Commodities />} />
           <Route path="accounts" element={<Accounts />} />
           <Route path="bots" element={<Bots />} />
           <Route path="promotions" element={<Promotions />} />

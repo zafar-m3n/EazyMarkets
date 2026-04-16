@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import logoDark from "@/assets/logoDark.webp";
+import pciLogo from "@/assets/pci.png";
+import nyseLogo from "@/assets/nyse.png";
+import nortonLogo from "@/assets/norton.png";
+import lseLogo from "@/assets/lseg.webp";
 
 function Footer() {
   const year = new Date().getFullYear();
@@ -12,14 +16,12 @@ function Footer() {
 
   return (
     <footer className="relative w-full bg-[#0b1a0b] text-white overflow-hidden">
-      {/* Glow Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-87.5 bg-accent-1/20 blur-[140px] rounded-full" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-0 pt-16 pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12 mb-10">
-          {/* Brand */}
           <div>
             <div className="mb-4">
               <img src={logoDark} alt="EazyMarkets" className="h-20 w-auto" />
@@ -45,9 +47,7 @@ function Footer() {
             </div>
           </div>
 
-          {/* Links */}
           <div className="grid grid-cols-3 gap-8 lg:col-span-3">
-            {/* Trading */}
             <div>
               <h4 className="font-semibold text-white mb-4">Trading</h4>
               <ul className="space-y-2">
@@ -69,7 +69,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Company */}
             <div>
               <h4 className="font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2">
@@ -91,7 +90,6 @@ function Footer() {
               </ul>
             </div>
 
-            {/* Legal */}
             <div>
               <h4 className="font-semibold text-white mb-4">Legal</h4>
               <ul className="space-y-2">
@@ -115,10 +113,32 @@ function Footer() {
           <p>640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
 
-        {/* Risk text (UNCHANGED content) */}
+        <div className="grid grid-cols-2 gap-x-8 gap-y-8 py-8 md:grid-cols-4 md:gap-12">
+          <div className="flex flex-col items-center text-center">
+            <img src={lseLogo} alt="London Stock Exchange" className="h-10 md:h-12 object-contain mb-3" />
+            <p className="text-sm md:text-base text-white/80">London Stock Exchange Data Provider</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center">
+            <img src={nyseLogo} alt="NYSE" className="h-12 md:h-14 object-contain mb-3" />
+            <p className="text-sm md:text-base text-white/80">New York Stock Exchange Data Provider</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center">
+            <img src={pciLogo} alt="PCI Certified" className="h-10 md:h-12 object-contain mb-3" />
+            <p className="text-sm md:text-base text-white/80">PCI Certified</p>
+          </div>
+
+          <div className="flex flex-col items-center text-center">
+            <img src={nortonLogo} alt="Norton Security" className="h-10 md:h-12 object-contain mb-3" />
+            <p className="text-sm md:text-base text-white/80">Customer & data security</p>
+          </div>
+        </div>
+        
+        <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
+
         <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-white/70">
           <p>
             <span className="font-semibold text-white">

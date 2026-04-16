@@ -70,11 +70,6 @@ const BotCard = ({ bot, index }) => {
               <BotInfoBlock label="ROI" value={bot.roi} />
             </div>
           </div>
-
-          <div className="mt-6 flex items-center gap-2 text-sm font-medium text-accent-2">
-            <span>Learn more</span>
-            <Icon icon="solar:arrow-right-up-bold" className="text-base" />
-          </div>
         </div>
       </div>
     </AnimatedContent>
