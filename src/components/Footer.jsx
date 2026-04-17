@@ -136,22 +136,32 @@ function Footer() {
             <p className="text-sm md:text-base text-white/80">Customer & data security</p>
           </div>
         </div>
-        
+
         <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
 
         <div className="mt-6 space-y-4 text-sm md:text-base leading-relaxed text-justify text-white/70">
+          <p>
+            EazyMarkets is proud to be a certified broker, duly licensed and regulated by
+            <strong> EAZY SERVICES LIMITED</strong>. Our company number is{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/16156758"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent-1 hover:underline"
+            >
+              16156758
+            </a>
+            , reflecting our commitment to maintaining the highest standards of financial integrity and transparency.
+            Our registration address is{" "}
+            <span className="italic">89 Church Road, Redfield, Bristol, England, BS5 9JR</span>
+          </p>
+
           <p>
             <span className="font-semibold text-white">
               Risk Management &amp; Confidence in Every Trade with EazyMarkets.
             </span>{" "}
             At EazyMarkets, we focus on disciplined execution and risk-aware trading. Our technology and strategies are
             engineered to help identify opportunities while managing risk with precision and consistency.
-          </p>
-
-          <p>
-            Using advanced algorithms, clearly defined methodologies, and zero emotional bias, our systems are designed
-            to avoid common pitfalls of manual trading such as panic decisions, over-leveraging, and operational errors.
-            Every trade is supported by data, logic, and real-time market analysis.
           </p>
 
           <p>
