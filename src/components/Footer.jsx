@@ -110,7 +110,7 @@ function Footer() {
 
         <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
           <Icon icon="mdi:map-marker-outline" className="w-5 h-5 text-accent-1 shrink-0" />
-          <p>640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
+          <p>Sub Office: 640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
         </div>
 
         <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
@@ -152,7 +152,7 @@ function Footer() {
               16156758
             </a>
             , reflecting our commitment to maintaining the highest standards of financial integrity and transparency.
-            Our registration address is{" "}
+            Our head office registration address is{" "}
             <span className="italic">89 Church Road, Redfield, Bristol, England, BS5 9JR</span>
           </p>
 

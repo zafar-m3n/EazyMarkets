@@ -7,7 +7,12 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 const contactCards = [
   {
     icon: "mdi:map-marker-outline",
-    title: "Address",
+    title: "Head Office Address",
+    value: "89 Church Road, Redfield, Bristol, England, BS5 9JR",
+  },
+  {
+    icon: "mdi:map-marker-outline",
+    title: "Sub Office Address",
     value: "640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom",
   },
   {
