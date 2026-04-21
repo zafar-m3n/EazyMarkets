@@ -110,6 +110,11 @@ function Footer() {
 
         <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
           <Icon icon="mdi:map-marker-outline" className="w-5 h-5 text-accent-1 shrink-0" />
+          <p>Head Office: 89 Church Road, Redfield, Bristol, England, BS5 9JR</p>
+        </div>
+
+        <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
+          <Icon icon="mdi:map-marker-outline" className="w-5 h-5 text-accent-1 shrink-0" />
           <p>Sub Office: 640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
         </div>
 
