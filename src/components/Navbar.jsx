@@ -28,7 +28,15 @@ function Navbar() {
     },
     { name: "Accounts", path: "/accounts" },
     { name: "Bots", path: "/bots" },
-    { name: "Promotions", path: "/promotions" },
+    {
+      name: "Rewards",
+      path: "/rewards",
+      children: [
+        { name: "Promotions", path: "/promotions" },
+        { name: "Introducing Broker", path: "/introducing-broker" },
+        { name: "Refer A Friend", path: "/refer-a-friend" },
+      ],
+    },
     {
       name: "Education",
       path: "/education",

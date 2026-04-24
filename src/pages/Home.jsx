@@ -4,7 +4,6 @@ import TickerSection from "@/components/home/TickerSection";
 
 const Welcome = lazy(() => import("@/components/home/Welcome"));
 const LiquidityProvidersSection = lazy(() => import("@/components/home/LiquidityProvidersSection"));
-const MissionVisionSection = lazy(() => import("@/components/home/MissionVisionSection"));
 const HowItWorksSection = lazy(() => import("@/components/home/HowItWorksSection"));
 const AwardsSection = lazy(() => import("@/components/home/AwardsSection"));
 const FeaturesSection = lazy(() => import("@/components/home/FeaturesSection"));
@@ -51,10 +50,6 @@ const Home = () => {
 
       <Suspense fallback={<div className="py-20" />}>
         <LiquidityProvidersSection sectionAnimation={sectionAnimation} />
-      </Suspense>
-
-      <Suspense fallback={<div className="py-20" />}>
-        <MissionVisionSection sectionAnimation={sectionAnimation} />
       </Suspense>
 
       <Suspense fallback={<div className="py-20" />}>

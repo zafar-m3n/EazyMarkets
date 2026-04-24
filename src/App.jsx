@@ -18,6 +18,8 @@ import Forex from "./pages/markets/Forex";
 import Indices from "./pages/markets/Indices";
 import Stocks from "./pages/markets/Stocks";
 import Commodities from "./pages/markets/Commodities";
+import IntroducingBroker from "./pages/IntroducingBroker";
+import ReferAFriend from "./pages/ReferAFriend";
 import NotFound from "./pages/NotFound";
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
           <Route path="accounts" element={<Accounts />} />
           <Route path="bots" element={<Bots />} />
           <Route path="promotions" element={<Promotions />} />
+          <Route path="introducing-broker" element={<IntroducingBroker />} />
+          <Route path="refer-a-friend" element={<ReferAFriend />} />
           <Route path="education/forex-basics" element={<ForexBasics />} />
           <Route path="education/ai-trading" element={<Education />} />
           <Route path="education/economic-calendar" element={<EconomicCalendar />} />
