@@ -44,7 +44,7 @@ const ibs = [
   },
   {
     name: "Hemraj Yadav",
-    region: "Andra",
+    region: "Andhra",
     image: hemraj,
     clients: "108",
     role: "Regional trust builder",
