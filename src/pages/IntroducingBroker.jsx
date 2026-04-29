@@ -6,6 +6,7 @@ import ScrollVelocity from "@/components/ui/ScrollVelocity";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import homeCTA from "@/assets/homeCTA.webp";
 import ib from "@/assets/ib.webp";
+import IBSection from "@/components/ib/IBSection";
 
 const ibHeroImage = ib;
 const ibCtaImage = homeCTA;
@@ -37,7 +38,7 @@ const benefitCards = [
       "Ideal for educators, communities, trading groups, content creators, and businesses with access to an active trader audience.",
   },
   {
-    icon: "solar:megaphone-bold",
+    icon: "mdi:megaphone",
     title: "Marketing Support",
     description:
       "Use partner-ready messaging, campaign ideas, and promotional direction to help you communicate the EazyMarkets offer clearly.",
@@ -336,6 +337,8 @@ const IntroducingBroker = () => {
             </div>
           </AnimatedContent>
         </section>
+
+        <IBSection />
 
         {/* WHO IT IS FOR */}
         <section className="relative border-b border-border/70 py-18 md:py-20">

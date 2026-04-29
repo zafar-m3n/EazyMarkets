@@ -1,8 +1,8 @@
 import React from "react";
-import { Icon } from "@iconify/react";
 
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import Button from "@/components/ui/Button";
+import useWidth from "@/hooks/useWidth";
 
 import xauusd from "@/assets/xauusd.webp";
 import wti from "@/assets/wti.webp";
@@ -12,6 +12,9 @@ import btc from "@/assets/btc.webp";
 import amzn from "@/assets/amzn.webp";
 
 const Welcome = () => {
+  const { width, breakpoints } = useWidth();
+  const isLargeDevice = width >= Number(breakpoints.md);
+
   const stocks = [
     {
       id: 1,
@@ -77,6 +80,10 @@ const Welcome = () => {
 
   const maxValue = Math.max(...stocks.map((stock) => stock.value));
 
+  const handleGetStarted = () => {
+    window.open("https://portal.eazymarkets.com/signup", "_blank");
+  };
+
   return (
     <AnimatedContent
       distance={100}
@@ -88,7 +95,7 @@ const Welcome = () => {
       scale={1.0}
       threshold={0.1}
     >
-      <section className="container mx-auto flex flex-col items-center justify-between p-8 lg:flex-row lg:space-x-6 lg:p-16 animate-appear-left animation-range-entryCover animation-timeline-view">
+      <section className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between lg:flex-row lg:space-x-6 py-8">
         <div className="space-y-6 text-center lg:w-1/2 lg:text-left">
           <h2 className="text-[2rem] font-bold text-secondary">
             Trading Dreams Powered by&nbsp;
@@ -105,15 +112,11 @@ const Welcome = () => {
             At EazyMarkets, we don’t just connect traders; We empower them to conquer the globe.
           </p>
 
-          <Button
-            variant="secondary"
-            icon="mdi:flash"
-            onClick={() => {
-              window.open("https://portal.eazymarkets.com/signup", "_blank");
-            }}
-          >
-            Get Started
-          </Button>
+          {isLargeDevice && (
+            <Button variant="secondary" icon="mdi:flash" onClick={handleGetStarted}>
+              Get Started
+            </Button>
+          )}
         </div>
 
         <div className="relative mt-10 flex w-full justify-center lg:mt-0 lg:w-1/2 lg:justify-end">

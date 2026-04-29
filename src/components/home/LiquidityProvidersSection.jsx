@@ -1,5 +1,7 @@
 import React from "react";
 import AnimatedContent from "@/components/ui/AnimatedContent";
+import Button from "@/components/ui/Button";
+import useWidth from "@/hooks/useWidth";
 
 import rakbank from "@/assets/banks/rakbank.webp";
 import bankofamerica from "@/assets/banks/bankofamerica.webp";
@@ -32,6 +34,9 @@ import westpac from "@/assets/banks/westpac.webp";
 import bayerische from "@/assets/banks/bayerische.webp";
 
 const LiquidityProvidersSection = ({ sectionAnimation }) => {
+  const { width, breakpoints } = useWidth();
+  const isMobileDevice = width < Number(breakpoints.lg);
+
   const providerLogos = [
     { name: "RAK Bank", src: rakbank },
     { name: "Bank of America", src: bankofamerica },
@@ -65,6 +70,10 @@ const LiquidityProvidersSection = ({ sectionAnimation }) => {
   ];
 
   const repeatedProviders = [...providerLogos, ...providerLogos];
+
+  const handleGetStarted = () => {
+    window.open("https://portal.eazymarkets.com/signup", "_blank");
+  };
 
   return (
     <section className="relative overflow-hidden border-b border-border/70 py-20">
@@ -108,6 +117,14 @@ const LiquidityProvidersSection = ({ sectionAnimation }) => {
               ))}
             </div>
           </div>
+
+          {isMobileDevice && (
+            <div className="mt-10 flex justify-center">
+              <Button variant="secondary" icon="mdi:flash" onClick={handleGetStarted}>
+                Get Started
+              </Button>
+            </div>
+          )}
         </div>
       </AnimatedContent>
     </section>
