@@ -198,8 +198,8 @@ function Footer() {
         <div className="mt-6 border-t border-white/10">
           <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm md:text-base text-white/60 text-center md:text-left">
-              <span className="text-2xl font-semibold bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">
-                {yearsActive}&nbsp;
+              <span className="text-3xl md:text-4xl font-semibold bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">
+                {yearsActive}+&nbsp;
               </span>
               years active
             </p>

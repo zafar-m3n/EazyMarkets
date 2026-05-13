@@ -135,13 +135,35 @@ function Navbar() {
           <div className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-white/10" />
 
           <div className="relative flex items-center justify-between px-6">
-            <Link to="/" onClick={scrollToTop} className="flex items-center whitespace-nowrap">
-              <img
-                src={currentLogo}
-                alt="EazyMarkets"
-                className="h-10 w-auto object-contain transition-all duration-300 md:h-12"
-              />
-            </Link>
+            <div className="flex flex-col items-start md:items-center whitespace-nowrap">
+              <Link to="/" onClick={scrollToTop} className="block">
+                <div>
+                  <img
+                    src={currentLogo}
+                    alt="EazyMarkets"
+                    className="h-10 w-auto object-contain transition-all duration-300 md:h-12"
+                  />
+                </div>
+              </Link>
+
+              <a
+                href="https://find-and-update.company-information.service.gov.uk/company/16156758"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`italic mt-0.5 text-xs font-medium leading-none tracking-wide transition-colors duration-300 ${
+                  useInvertedNavbar ? "text-white/65 hover:text-accent-1" : "text-text/55 hover:text-accent-2"
+                }`}
+              >
+                Powered by{" "}
+                <span
+                  className={`font-semibold transition-colors duration-300 ${
+                    useInvertedNavbar ? "text-accent-1" : "text-accent-2"
+                  }`}
+                >
+                  EAZY SERVICES LIMITED
+                </span>
+              </a>
+            </div>
 
             <div className="hidden items-center gap-6 lg:flex">
               {navLinks.map((link) => {

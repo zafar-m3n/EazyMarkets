@@ -103,13 +103,17 @@ const Welcome = () => {
           </h2>
 
           <p className="text-sm text-justify md:text-base">
-            Venture into a realm of endless financial potential with EazyMarkets. Crafted for both newcomers and
-            seasoned traders, our platform offers an unmatched trading journey. Dive into a variety of markets, from
-            stocks to crypto, with cutting-edge tools and live analytics designed to guide you toward success.
+            Venture into a realm of endless financial potential with EazyMarkets. Backed by over{" "}
+            <span className="text-lg font-bold text-accent-1 md:text-xl">6+</span> years of experience in the trading
+            space, our platform is crafted for both newcomers and seasoned traders who want access to global markets
+            with greater confidence. From stocks to crypto, EazyMarkets combines modern tools, live analytics, and a
+            streamlined trading experience designed to support every step of your journey.
           </p>
 
           <p className="text-sm text-justify md:text-base">
-            At EazyMarkets, we don’t just connect traders; We empower them to conquer the globe.
+            Since the beginning, EazyMarkets has stood for more than access to the markets. We are here to empower
+            traders with the technology, insight, and support they need to move with clarity in a fast-changing
+            financial world.
           </p>
 
           {isLargeDevice && (
