@@ -95,26 +95,36 @@ const Welcome = () => {
       scale={1.0}
       threshold={0.1}
     >
-      <section className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between lg:flex-row lg:space-x-6 py-8">
+      <section className="container mx-auto flex max-w-7xl flex-col items-center justify-between px-4 py-8 sm:px-6 lg:flex-row lg:space-x-6 lg:px-8">
         <div className="space-y-6 text-center lg:w-1/2 lg:text-left">
           <h2 className="text-[2rem] font-bold text-secondary">
             Trading Dreams Powered by&nbsp;
             <span className="bg-linear-to-r from-accent-1 to-accent-2 bg-clip-text text-transparent">EazyMarkets</span>
           </h2>
 
-          <p className="text-sm text-justify md:text-base">
-            Venture into a realm of endless financial potential with EazyMarkets. Backed by over{" "}
-            <span className="text-lg font-bold text-accent-1 md:text-xl">6+</span> years of experience in the trading
-            space, our platform is crafted for both newcomers and seasoned traders who want access to global markets
-            with greater confidence. From stocks to crypto, EazyMarkets combines modern tools, live analytics, and a
-            streamlined trading experience designed to support every step of your journey.
-          </p>
+          <div className="relative overflow-hidden rounded-2xl py-4">
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-[4.5rem] font-bold uppercase leading-none tracking-tight text-accent-2/20 md:text-[5.5rem] lg:text-[6.5rem]">
+                6+
+              </div>
+            </div>
 
-          <p className="text-sm text-justify md:text-base">
-            Since the beginning, EazyMarkets has stood for more than access to the markets. We are here to empower
-            traders with the technology, insight, and support they need to move with clarity in a fast-changing
-            financial world.
-          </p>
+            <div className="relative z-10 space-y-6">
+              <p className="text-sm text-justify md:text-base">
+                Venture into a realm of endless financial potential with EazyMarkets. Backed by over{" "}
+                <span className="text-lg font-bold text-accent-1 md:text-xl">6+</span> years of experience in the
+                trading space, our platform is crafted for both newcomers and seasoned traders who want access to global
+                markets with greater confidence. From stocks to crypto, EazyMarkets combines modern tools, live
+                analytics, and a streamlined trading experience designed to support every step of your journey.
+              </p>
+
+              <p className="text-sm text-justify md:text-base">
+                Since the beginning, EazyMarkets has stood for more than access to the markets. We are here to empower
+                traders with the technology, insight, and support they need to move with clarity in a fast-changing
+                financial world.
+              </p>
+            </div>
+          </div>
 
           {isLargeDevice && (
             <Button variant="secondary" icon="mdi:flash" onClick={handleGetStarted}>

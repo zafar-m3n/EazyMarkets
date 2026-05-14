@@ -5,7 +5,7 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 const TickerSection = ({ scrollContainerRef, sectionAnimation }) => {
   const tickerTexts = [
     "AI SIGNALS • RISK CONTROLS • BACKTESTED STRATEGIES • REAL-TIME ALERTS • LOW-LATENCY EXECUTION •",
-    "NO EMOTION • DISCIPLINED TRADING • PORTFOLIO MONITORING • SMART AUTOMATION •",
+    "NO EMOTION • DISCIPLINED TRADING • 6+ YEARS OF EXPERIENCE • PORTFOLIO MONITORING • SMART AUTOMATION •",
   ];
 
   return (
