@@ -3,6 +3,7 @@ import React from "react";
 import AnimatedContent from "@/components/ui/AnimatedContent";
 import PromotionCard from "@/components/promotions/PromotionCard";
 
+import promotions0 from "@/assets/promotions0.webp";
 import promotions1 from "@/assets/promotions1.webp";
 import promotions2 from "@/assets/promotions2.webp";
 import promotions3 from "@/assets/promotions3.webp";
@@ -11,6 +12,25 @@ import promotions4 from "@/assets/promotions4.webp";
 const promotionsData = [
   {
     id: "01",
+    title: "$100 VERIFICATION BONUS",
+    subheading: "Complete your verification and get rewarded in two simple stages.",
+    text: [
+      "Start your EazyMarkets journey by completing the verification form and unlock a $50 bonus once your form is successfully submitted.",
+      "After your documents and details are reviewed, receive an additional $50 bonus when your verification is approved.",
+      "Complete the process, get verified, and enjoy up to $100 in total verification rewards.",
+    ],
+    image: promotions0,
+    badge: "$100 Bonus",
+    icon: "solar:shield-check-bold",
+    kicker: "Verification Reward",
+    highlights: ["$50 form completion bonus", "$50 approval bonus"],
+    cta: {
+      label: "Start Verification",
+      href: "https://verification.eazymarkets.com",
+    },
+  },
+  {
+    id: "02",
     title: "DOUBLE DEPOSIT",
     subheading:
       "Supercharge your trading journey—double your investment instantly and unlock endless profit potential!",
@@ -24,9 +44,13 @@ const promotionsData = [
     icon: "solar:wallet-money-bold",
     kicker: "Deposit Bonus",
     highlights: ["Boosted opening capital", "Stronger trading start"],
+    cta: {
+      label: "Claim Bonus",
+      href: "https://portal.eazymarkets.com",
+    },
   },
   {
-    id: "02",
+    id: "03",
     title: "CRYPTO BONUS",
     subheading: "Kickstart your crypto journey with a bang—enjoy a 25% bonus on your first deposit!",
     text: [
@@ -39,9 +63,13 @@ const promotionsData = [
     icon: "solar:bitcoin-card-bold",
     kicker: "Crypto Offer",
     highlights: ["Extra first deposit value", "Built for crypto traders"],
+    cta: {
+      label: "Claim Crypto Bonus",
+      href: "https://portal.eazymarkets.com",
+    },
   },
   {
-    id: "03",
+    id: "04",
     title: "5 LOSS-FREE TRADES",
     subheading: "Trade like a pro with 5 loss-free trades—your risk-free ticket to success!",
     text: [
@@ -54,9 +82,13 @@ const promotionsData = [
     icon: "solar:shield-check-bold",
     kicker: "Risk-Controlled Start",
     highlights: ["Trade with more confidence", "Explore with reduced pressure"],
+    cta: {
+      label: "Start Trading",
+      href: "https://portal.eazymarkets.com",
+    },
   },
   {
-    id: "04",
+    id: "05",
     title: "PREPAID MASTERCARD",
     subheading: "Unlock endless benefits with our all-in-one Prepaid MasterCard—empower your wallet!",
     text: [
@@ -69,10 +101,13 @@ const promotionsData = [
     icon: "solar:card-bold",
     kicker: "Account Benefit",
     highlights: ["Global convenience", "Premium account advantage"],
+    cta: {
+      label: "Access Portal",
+      href: "https://portal.eazymarkets.com",
+    },
   },
 ];
-
-const PromotionsGridSection = () => {
+function PromotionsGridSection() {
   return (
     <section className="relative py-16 md:py-20">
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -100,6 +135,6 @@ const PromotionsGridSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default PromotionsGridSection;

@@ -1,14 +1,24 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const PromotionCard = ({ promotion }) => {
+import Button from "@/components/ui/Button";
+
+function PromotionCard({ promotion }) {
+  function handleCtaClick() {
+    if (!promotion.cta?.href) {
+      return;
+    }
+
+    window.open(promotion.cta.href, "_blank", "noopener,noreferrer");
+  }
+
   return (
     <article className="relative h-full">
-      <div className="relative overflow-hidden rounded-4xl border border-border/85 bg-white/44 shadow-[0_18px_52px_rgba(31,41,55,0.08)] backdrop-blur-md">
+      <div className="relative h-full overflow-hidden rounded-4xl border border-border/85 bg-white/44 shadow-[0_18px_52px_rgba(31,41,55,0.08)] backdrop-blur-md">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.70),rgba(255,255,255,0.38))]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(126,217,87,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(79,143,47,0.10),transparent_24%)]" />
 
-        <div className="relative">
+        <div className="relative flex h-full flex-col">
           <div className="relative aspect-video overflow-hidden">
             <img src={promotion.image} alt={promotion.title} className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-linear-to-t from-background/72 via-background/14 to-transparent" />
@@ -29,7 +39,7 @@ const PromotionCard = ({ promotion }) => {
             </div>
           </div>
 
-          <div className="px-5 py-6 md:px-7 md:py-7">
+          <div className="flex flex-1 flex-col px-5 py-6 md:px-7 md:py-7">
             <p className="text-base font-semibold leading-8 text-accent-2 md:text-lg">{promotion.subheading}</p>
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -48,11 +58,26 @@ const PromotionCard = ({ promotion }) => {
                 </p>
               ))}
             </div>
+
+            {promotion.cta && (
+              <div className="mt-auto pt-7 mx-auto">
+                <Button
+                  type="button"
+                  variant="primary"
+                  icon="solar:arrow-right-up-linear"
+                  iconPosition="right"
+                  onClick={handleCtaClick}
+                  className="w-full sm:w-auto"
+                >
+                  {promotion.cta.label}
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </article>
   );
-};
+}
 
 export default PromotionCard;
