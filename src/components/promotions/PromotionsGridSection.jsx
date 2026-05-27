@@ -4,6 +4,7 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 import PromotionCard from "@/components/promotions/PromotionCard";
 
 import promotions0 from "@/assets/promotions0.webp";
+import eidPromo from "@/assets/eidPromo.webp";
 import promotions1 from "@/assets/promotions1.webp";
 import promotions2 from "@/assets/promotions2.webp";
 import promotions3 from "@/assets/promotions3.webp";
@@ -31,6 +32,25 @@ const promotionsData = [
   },
   {
     id: "02",
+    title: "EID AL-ADHA INVESTMENT BONUS",
+    subheading: "Celebrate Eid al-Adha with a limited-time investment bonus designed to boost your trading power.",
+    text: [
+      "Strengthen your trading account this Eid with exclusive investment bonuses: invest $5,000 and receive 30% bonus, $10,000 and receive 50% bonus, or $20,000 and receive 60% bonus.",
+      "That gives you up to $12,000 in bonus capital, helping you access more market opportunities across forex, commodities, indices, crypto, and other instruments.",
+      "This seasonal Eid al-Adha offer is valid until 31st May 2026. Activate your bonus through our support or account management team.",
+    ],
+    image: eidPromo,
+    badge: "Up to 60% Bonus",
+    icon: "solar:moon-bold",
+    kicker: "Eid al-Adha Offer",
+    highlights: ["$5K, $10K, $20K tiers", "Valid until 31st May 2026"],
+    cta: {
+      label: "Activate Bonus",
+      href: "https://portal.eazymarkets.com",
+    },
+  },
+  {
+    id: "03",
     title: "DOUBLE DEPOSIT",
     subheading:
       "Supercharge your trading journey—double your investment instantly and unlock endless profit potential!",
@@ -50,7 +70,7 @@ const promotionsData = [
     },
   },
   {
-    id: "03",
+    id: "04",
     title: "CRYPTO BONUS",
     subheading: "Kickstart your crypto journey with a bang—enjoy a 25% bonus on your first deposit!",
     text: [
@@ -69,7 +89,7 @@ const promotionsData = [
     },
   },
   {
-    id: "04",
+    id: "05",
     title: "5 LOSS-FREE TRADES",
     subheading: "Trade like a pro with 5 loss-free trades—your risk-free ticket to success!",
     text: [
@@ -88,7 +108,7 @@ const promotionsData = [
     },
   },
   {
-    id: "05",
+    id: "06",
     title: "PREPAID MASTERCARD",
     subheading: "Unlock endless benefits with our all-in-one Prepaid MasterCard—empower your wallet!",
     text: [
@@ -107,6 +127,7 @@ const promotionsData = [
     },
   },
 ];
+
 function PromotionsGridSection() {
   return (
     <section className="relative py-16 md:py-20">
