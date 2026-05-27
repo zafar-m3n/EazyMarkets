@@ -26,8 +26,15 @@ function Navbar() {
         { name: "Cryptocurrency", path: "/markets/crypto" },
       ],
     },
-    { name: "Accounts", path: "/accounts" },
-    { name: "Bots", path: "/bots" },
+    {
+      name: "Trading",
+      path: "/trading",
+      children: [
+        { name: "Account Types", path: "/accounts" },
+        { name: "Trading Bots", path: "/bots" },
+      ],
+    },
+    { name: "Offers", path: "/offers" },
     {
       name: "Rewards",
       path: "/rewards",
