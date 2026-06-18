@@ -18,7 +18,7 @@ const contactCards = [
   {
     icon: "mdi:phone-outline",
     title: "Phone",
-    value: "+44 7700 144484",
+    value: "+44 2046 382535",
   },
   {
     icon: "mdi:email-outline",
