@@ -34,7 +34,7 @@ function Navbar() {
         { name: "Trading Bots", path: "/bots" },
       ],
     },
-    // { name: "Offers", path: "/offers" },
+    { name: "Offers", path: "/offers" },
     {
       name: "Rewards",
       path: "/rewards",

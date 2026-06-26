@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Accounts from "./pages/Accounts";
 import Bots from "./pages/Bots";
 import Education from "./pages/Education";
-// import Offers from "./pages/Offers";
+import Offers from "./pages/Offers";
 import EconomicCalendar from "./pages/EconomicCalendar";
 import ForexBasics from "./pages/ForexBasics";
 import FundamentalAnalysis from "./pages/FundamentalAnalysis";
@@ -36,7 +36,7 @@ function App() {
           <Route path="markets/commodities" element={<Commodities />} />
           <Route path="accounts" element={<Accounts />} />
           <Route path="bots" element={<Bots />} />
-          {/* <Route path="offers" element={<Offers />} /> */}
+          <Route path="offers" element={<Offers />} />
           <Route path="promotions" element={<Promotions />} />
           <Route path="introducing-broker" element={<IntroducingBroker />} />
           <Route path="refer-a-friend" element={<ReferAFriend />} />
