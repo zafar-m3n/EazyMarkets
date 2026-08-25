@@ -120,10 +120,10 @@ function Footer() {
           <p>Sub Office: 640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom</p>
         </div>
 
-        <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
+        {/* <div className="flex items-center justify-center gap-2 text-xs md:text-base text-white/60 text-center">
           <Icon icon="mdi:map-marker-outline" className="w-5 h-5 text-accent-1 shrink-0" />
           <p>UAE BO: Office No. 901, Churchill Tower-1, Business Bay, Dubai, United Arab Emirates</p>
-        </div>
+        </div> */}
 
         <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent my-8" />
 

@@ -15,11 +15,11 @@ const contactCards = [
     title: "Sub Office Address",
     value: "640 Morrison Street, Edinburgh, EH3 8BL, United Kingdom",
   },
-  {
-    icon: "mdi:map-marker-outline",
-    title: "UAE BO Address",
-    value: "Office No. 901, Churchill Tower-1, Business Bay, Dubai, United Arab Emirates",
-  },
+  // {
+  //   icon: "mdi:map-marker-outline",
+  //   title: "UAE BO Address",
+  //   value: "Office No. 901, Churchill Tower-1, Business Bay, Dubai, United Arab Emirates",
+  // },
   {
     icon: "mdi:phone-outline",
     title: "Phone",
