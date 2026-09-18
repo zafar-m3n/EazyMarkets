@@ -1,6 +1,7 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import PromotionsHeroSection from "@/components/promotions/PromotionsHeroSection";
 import PromotionsGridSection from "@/components/promotions/PromotionsGridSection";
+import PromotionsLoanInfoSection from "@/components/promotions/PromotionsLoanInfoSection";
 const PromotionsCtaSection = lazy(() => import("@/components/promotions/PromotionsCtaSection"));
 
 const Promotions = () => {
@@ -18,6 +19,7 @@ const Promotions = () => {
 
       <PromotionsHeroSection />
       <PromotionsGridSection />
+      <PromotionsLoanInfoSection />
 
       <Suspense fallback={<div className="py-18 md:py-20" />}>
         <PromotionsCtaSection />
